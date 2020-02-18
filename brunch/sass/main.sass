@@ -1,0 +1,696 @@
+@import "fonts"
+@import "color"
+*
+	-webkit-box-sizing: border-box
+	-moz-box-sizing: border-box
+	box-sizing: border-box
+	&:before, &:after
+		-webkit-box-sizing: border-box
+		-moz-box-sizing: border-box
+		box-sizing: border-box
+
+html, body
+	height: 100%
+
+*
+	margin: 0
+	padding: 0
+
+body
+	font-size: 16px
+	min-width: 320px
+	line-height: 1.75
+	font-family: $default-font
+	opacity: 1
+	background-color: $accent_coloured
+
+.container 
+	padding: 0
+	margin: 0 auto
+	width: 1085px
+	position: relative
+
+.flex
+	display: flex
+	flex-wrap: wrap
+
+
+.h1
+	line-height: 1
+	font-family: "cookie_exemple", sans-serif
+	font-size: 52px
+	color: $accent_coloured
+
+.h2
+	color: $h_coloured
+	font-size: 40px
+
+.h2, .h3, .h4, .h5
+	line-height: 1
+	text-transform: uppercase
+
+b, strong
+	font-weight: bold
+
+/*______________ button ______________*/
+.button 
+	display: inline-block
+	border: none
+	color: $accent_coloured
+	text-decoration: none
+	background-color: #fff
+	padding: 5px 25px
+	font-size: 30px
+	text-transform: uppercase
+	font-weight: 600
+	letter-spacing: -1px // pастояния между букв
+	border-radius: 2px
+	text-align: center
+	position: relative
+	outline: none
+	transition: background-color .1s ease
+	&::after
+		transition: background-color .2s ease
+		position: absolute
+		content: ''
+		height: 4px
+		bottom: 0
+		width: 100%
+		background-color: darken(#fff, 50%)
+		opacity: .18
+		border-bottom-left-radius: 2px
+		border-bottom-right-radius: 2px
+		left: 0
+	&:focus, &:hover
+		text-decoration: none
+		color: $accent_coloured
+	&:hover
+		background-color: lighten(#fff, 5%)
+		opacity: .9
+		&::after
+			opacity: .8
+	&:active
+		background-color: darken(#fff, 5%)
+		&::after
+			opacity: .32
+/*______________// button ______________*/
+
+
+section, header
+	position: relative
+	background-size: cover
+	background-position: 50% 50%
+
+section 
+	background-color: $accent_coloured
+
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+
+.text-center
+	text-align: center
+
+::selection
+	background-color: $accent_coloured
+	color: #fff
+
+
+/*______________ header хедера ______________*/
+.header
+	>.flex
+		flex-direction: column
+		justify-content: space-between
+	min-height: 100vh
+	background:
+		image: url(../img/bg_1.png)
+		color: $accent_coloured
+		repeat: no-repeat
+		size: cover
+	.container
+		min-height: inherit
+	.h1
+		line-height: 1
+		font-size: 75px
+	.h2
+		font-size: 70px
+		font-weight: 600
+	.button
+		margin-top: 20px
+	.flex__menu_logo
+		margin-top: 60px
+		justify-content: space-between
+		.logo, .menu
+			font-size: 30px
+			font-weight: bold
+			text-transform: uppercase
+			color: $menu_coloured
+		.logo
+			z-index: 1000
+		ul
+			list-style: none
+			padding: 0
+			margin: 0
+		li
+			margin: 
+				right: 20px
+			&:last-child
+				margin: 
+					right: 0px
+		a
+			text-decoration: none
+			color: $menu_coloured
+			&:hover
+				color: #fff
+
+
+		//mobile menu
+		.menu__icon 
+			display: none
+			width: 45px
+			height: 35px
+			position: relative
+			cursor: pointer
+			margin-top: 7px
+		.menu__icon span 
+			display: block
+			position: absolute
+			height: 9px
+			width: 100%
+			background: $menu_coloured
+			border-radius: 9px
+			opacity: 1
+			left: 0
+			transform: rotate(0deg)
+			transition: .25s ease-in-out
+			&:nth-child(1) 
+				top: 0px
+			&:nth-child(2), &:nth-child(3) 
+				top: 13px
+				background: rgba(255, 255, 255, 0.47)
+			&:nth-child(4) 
+				top: 26px
+		.menu.menu__open
+			margin-top: 3px
+			margin-right: 13px
+			.menu__icon span
+				&:nth-child(1)
+					top: 18px
+					width: 0%
+					left: 50%
+				&:nth-child(2) 
+					transform: rotate(45deg)
+				&:nth-child(3) 
+					transform: rotate(-45deg)
+				&:nth-child(4) 
+					top: 18px
+					width: 0%
+					left: 50%
+			.menu__links
+				display: block
+
+
+
+	.header__center_info
+		width: 760px
+		background-color: $bg_light
+		text-align: center
+		margin: auto
+		.text_header
+			margin: 
+				top: 120px
+				bottom: 120px
+
+/*______________// header cекция ______________*/
+
+/*______________ second cекция ______________*/
+.second
+	.container
+		flex-direction: column
+		min-height: inherit
+	.content_block
+		margin-top: 69px
+		.content__text
+			padding-right: 20px
+			margin: auto
+				left: 0
+			width: 500px
+			color: #fff
+			.h_text
+				display: block
+				font-size: 29px
+				margin-bottom: 49px
+			.text_second
+				text-align: justify
+				font-size: 18px
+		img
+			width: 528px
+			height: 355px
+			margin: auto
+				right: 0
+		&:last-child
+			margin: 
+				bottom: 69px
+
+	
+/*______________// second cекция ______________*/
+
+/*______________ third cекция ______________*/
+.third
+	background:
+		color: $bg_light
+	.container
+		flex-direction: column
+		margin:
+			top: 69px
+			bottom: 69px
+		min-height: inherit
+	.content_text
+		margin: auto
+		width: 258px
+		color: $accent_coloured
+		.block_circle
+			margin:
+				bottom: 25px
+		.h_text2
+			font-size: 19px
+		.text_third
+			text-align: justify
+			font-size: 18px
+		&:first-child
+			margin:
+				left: 0
+		&:last-child
+			margin:
+				right: 0
+.circle
+	box-shadow: 1px 2px 6px
+	width: 31px
+	height: 31px
+	background: $accent_coloured
+	border-radius: 50px
+	margin-right: 6px
+	&:last-child
+		margin-right: 0
+/*______________// third cекция ______________*/
+
+
+/*______________ fourth cекция ______________*/
+.fourth
+	background:
+		image: url(../img/bg_2.png)
+		color: $accent_coloured
+		position: center center
+		repeat: no-repeat
+		size: cover
+	.container
+		flex-direction: column
+	.fourth__center_info
+		width: 1080px
+		text-align: center
+		margin: auto
+			top: 90px
+			bottom: 90px
+		color: $accent_coloured
+		.fourth_h
+			padding: 
+				top: 55px
+				bottom: 55px
+			background-color: $bg_light
+			width: 1080px
+		ul.fourth__bloks_center
+			list-style: none
+			width: 1080px
+			li.flex_item, img.img_item
+				padding: 0
+				margin: 0
+				width: 270px
+				height: 274px
+				background-color: $bg_light
+			li.flex_item
+				.info
+					width: 160px
+					margin: auto
+				.h_text
+					text-transform: uppercase
+					font-size: 18px
+				.text, .price
+					font-size: 16px
+
+/*______________// fourth cекция ______________*/
+
+/*______________ fifth cекция ______________*/
+.fifth
+	background:
+		image: url(../img/bg_3.1.png), url(../img/bg_3.1.2.png)
+		repeat: repeat-y, repeat-y
+		color: $bg_light
+		position: 0 50%, 100% 50%
+		size: cover, cover
+	.fifth__center_info
+		width: 700px
+		text-align: center
+		margin: auto
+			top: 79px
+			bottom: 69px
+		color: $accent_coloured
+		.h3
+			text-transform: none
+			margin: 
+				bottom: 30px
+			font-size: 29px
+		.fifth__text
+			font-size: 18px
+		.block_circle
+			justify-content: center
+			margin: 
+				top: 50px
+				bottom: 50px
+		.block_menu2
+			justify-content: center
+			margin: 
+				right: auto
+				left: auto
+			.a_menu2
+				margin:
+					right: 60px
+				&:last-child
+					margin:
+						right: 0px
+				a.menu2
+					text-decoration: none
+					color: $accent_coloured
+					&:hover
+						color: #fff
+
+/*______________// fifth cекция ______________*/
+
+
+
+/*______________ sixth cекция ______________*/
+.sixth
+	background:
+		image: url(../img/bg_3.2.png)
+		color: $accent_coloured
+		position: center center
+		repeat: no-repeat
+		size: cover
+	.background_0
+		background-color: transparent
+		height: 240px
+	.background_light
+		background-color: $bg_light
+		flex-direction: column
+	.sixth_h
+		text-align: center
+		margin: auto
+			top: 45px
+			bottom: 45px
+	ul.sixth__bloks
+		color: $accent_coloured
+		list-style: none
+		padding: 0
+		margin: 0
+		width: 1080px
+		.img_background
+			background: #fff
+			border:
+				radius: 100%
+			width: 81px
+			height: 81px
+			margin: 
+				right: 10px
+			img.img_item
+				width: 41px
+				height: 41px
+				margin: auto
+		li.flex_item
+			margin: auto
+				left: 0
+				bottom: 55px
+				// right: 0
+			width: 410px
+			.content_text
+				width: 319px
+				.h_text
+					text-transform: uppercase
+		li.flex_item2
+			margin: auto
+				right: 0
+				bottom: 55px
+
+/*______________// sixth cекция ______________*/
+
+
+
+/*______________ seventh cекция ______________*/
+.seventh
+	background:
+		image: url(../img/bg-4.png)
+		color: $accent_coloured
+		position: center center
+		repeat: no-repeat
+		size: cover
+	height: 890px
+/*______________// seventh cекция ______________*/
+
+
+/*______________ eighth cекция ______________*/
+.eighth
+	background:
+		color: $accent_coloured
+	.eighth__container, .h1
+		color: #fff
+	.eighth__container
+		margin: auto
+			top: 51px
+			bottom: 72px
+		flex-direction: column
+		.eighth_h
+			text-align: center
+			margin: auto
+				bottom: -4px
+		.eighth__form_decor
+			margin: auto
+			.element
+				width: 240px
+				margin: auto
+					right: 100px
+					left: 0
+					top: 44px
+			.element2
+				margin: auto
+					right: 0
+					bottom: 0
+			.element3
+				margin:
+					left: 7.6%
+					right: 7.6%
+			input, select
+				width: 240px
+				option
+					background-color: $accent_coloured
+			.fields_eighth_execution
+				border-width: 1.5px
+				border-color: #fff
+				border-style: solid
+				border-radius: 8px
+				padding-left: 8px
+				height: 30px
+				font-size: 16.667px
+				font-family: $default-font
+				color: #fff
+				font-weight: bold
+				line-height: 1.2
+				text-align: left
+				background: none
+			::placeholder
+				color: #fff
+			.calendar
+				background: url(../img/calendar.png) no-repeat 96% 50% 
+			.time
+				background: url(../img/time.png) no-repeat 96% 50% 
+			.submit
+				margin: auto
+					top: 55px
+				#submit
+					text-align: center
+					text-transform: uppercase
+					padding-left: 0
+					&::after
+						background-color: darken(#fff, 50%)
+						opacity: .18
+					&:focus, &:hover
+						color: $accent_coloured
+						background-color: darken(#fff, 5%)
+					&:hover
+						background-color: lighten(#fff, 5%)
+						opacity: .9
+					&:active
+						background-color: darken(#fff, 5%)
+
+
+
+/*______________// eighth cекция ______________*/
+
+
+/*______________ ninth cекция ______________*/
+.ninth
+	background:
+		image: url(../img/bg-5.png)
+		color: $accent_coloured
+		position: center center
+		repeat: no-repeat
+		size: cover
+	height: 865px
+/*______________// ninth cекция ______________*/
+
+/*______________ tenth cекция ______________*/
+.tenth
+	background:
+		color: $bg_light
+	.tenth__container
+		margin: auto
+			top: 46px
+			bottom: 124px
+	.tenth_h
+		text-align: center
+		margin: 
+			right: auto
+			left: auto
+			bottom: 56px
+	.tenth__bloks
+		color: rgb(85, 85, 85)
+	li.flex_item
+		width: 339px
+		list-style: none
+		margin: auto
+			top: 0
+		background:
+			color: #fff
+		img.img_item
+			height: 301px
+			margin: 0
+			padding: 0
+		.block_text
+			margin:
+				right: 28px
+				left: 28px
+				top: 25px
+				bottom: 38px
+			.h1_text
+				padding-bottom: 27px
+				font-weight: bold
+			.h2_text
+				padding-bottom: 7px
+				font-weight: bold
+		.read_more_otstyp
+			padding-top: 28px
+		a.read_more
+			text-transform: uppercase
+			text-decoration: none
+			color: rgb(85, 85, 85)
+			font-size: 14px
+			font-weight: bold
+			padding-bottom: 5px
+			border-bottom: 7px solid rgb(255, 153, 43)
+			&:hover
+				border-bottom: 7px solid rgba(255, 153, 43, .5)
+		&:first-child
+			margin:
+				left: 0
+		&:last-child
+			margin:
+				right: 0
+/*______________// tenth cекция ______________*/
+
+/*______________ eleventh cекция ______________*/
+.eleventh
+	background:
+		color: $accent_coloured
+	.eleventh__center_info
+		margin: auto
+			top: 48px
+			bottom: 48px
+		color: #fff
+		text-align: center
+		width: 697px
+		.eleventh_h
+			font-size: 83px
+			line-height: 1
+		.text
+			font-size: 18.75px
+		.h3_text
+			font-size: 18.75px
+			font-weight: bold
+			margin-top: 32px
+		.eleventh__icons_social
+			margin: auto
+				top: 43px
+			justify-content: center
+			a.fa_bg
+				background: #fff
+				border:
+					radius: 100%
+				width: 46px
+				height: 46px
+				margin: 
+					right: 26px
+				&:last-child
+					margin: 
+						right: 0
+				text-decoration: none
+				.fa
+					color: $accent_coloured
+					margin: auto
+					font-size: 25px
+				&:hover
+					background-color: rgba(255, 255, 255, .6)
+
+
+
+/*______________// eleventh cекция ______________*/
+
+
+/*______________ footer cекция ______________*/
+.footer
+	background:
+		color: $bg_light
+	color: rgb(45, 47, 42)
+	.footer_container
+		justify-content: space-between
+		margin: 
+			top: 73px
+			bottom: 109px
+	.left_content
+		width: 344px
+		.columm
+			font-size: 18.75px
+			.h2
+				font-size: 25px
+				color: rgb(45, 47, 42)
+				margin-bottom: 51px
+				font-weight: bold
+			.text
+				text-align: justify
+				font-size: 18.75px
+	.right_content
+		text-align: center
+		.columm2
+			width: 187px
+			font-weight: bold
+			.h2
+				font-size: 21px
+				color: rgb(45, 47, 42)
+				margin-bottom: 51px
+			a.info
+				text-decoration: none
+				color: rgb(45, 47, 42)
+			&:last-child
+				font-weight: normal
+/*______________ // footer cекция ______________*/
+
+@import "media"
+
+

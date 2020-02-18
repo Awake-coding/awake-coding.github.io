@@ -1,0 +1,406 @@
+@import "color"
+
+@media screen and (min-width: 800px) and (max-width: 1100px)
+	.container 
+		width: 90%
+
+	.header
+		.header__center_info 
+			max-width: 90%
+			.text_header
+				margin-top: 60px
+				margin-bottom: 60px
+
+	.second 
+		.content_block
+			img
+				width: 45%
+				height: 45%
+			.content__text
+				width: 55%
+
+	.third 
+		.content_text
+			width: 30%
+
+	.fourth 
+		.fourth__center_info
+			width: 540px
+			margin: 
+				right: auto
+				left: auto
+		.food_block
+			&:nth-child(2)
+				flex-direction: row-reverse
+			&:nth-child(3)
+				flex-direction: row-reverse
+			&:nth-child(6)
+				flex-direction: row-reverse
+
+	.fifth
+		background:
+			position: 15% 90%, 85% 90%
+		.fifth__center_info
+			width: 70%
+
+	.sixth
+		ul.sixth__bloks
+			li.flex_item
+				margin-left: auto
+			li.flex_item2
+				margin: auto
+					bottom: 55px
+
+	.eighth
+		.eighth__container
+			.eighth__form_decor
+				margin: auto
+				.element
+					margin: auto
+						top: 44px
+						right: 5px
+						left: 5px
+		.center_element
+			justify-content: space-between
+
+	.tenth
+		li.flex_item
+			margin: auto
+				top: 0
+			&:first-child
+				margin:
+					left: auto
+			&:last-child
+				margin:
+					right: auto
+					top: 56px
+
+	.eleventh
+		.eleventh__center_info
+			width: 90%
+
+	.footer
+		.footer_container
+			margin: 
+				top: 0
+				bottom: 73px
+			justify-content: center
+		.left_content
+			margin: auto
+				top: 73px
+		.right_content
+			margin: auto
+				top: 73px
+			.columm2
+				width: 150px
+				.h2
+					text-align: center
+				.info_bocks_a
+					text-align: center
+
+@media screen and (min-width: 0) and (max-width: 800px)
+	.container 
+		width: 90%
+
+	.header 
+		.header__center_info 
+			max-width: 90%
+			.text_header
+				margin-top: 30px
+				margin-bottom: 30px
+				padding: 
+					left: 15px
+					right: 15px
+
+		.flex__menu_logo
+			margin-top: 30px
+			user-select: none //не дет выделять текст MENU
+			.menu__icon
+				display: inline-block
+				z-index: 999
+			.menu__links
+				position: fixed
+				display: none
+				top: 0
+				right: 0
+				left: 0
+				min-height: 100vh
+				background-color: rgba(42, 59, 64, 1)
+				padding-top: 102px
+				text-align: center
+				z-index: 998
+			ul
+				flex-direction: column
+				justify-content: center
+			li
+				margin: 0
+				border-top: 4px solid rgba(255, 255, 255, 0.42)
+				&:last-child
+					border-bottom: 4px solid rgba(255, 255, 255, 0.42)
+				a
+					padding: 
+						right: 25%
+						left: 25%
+
+	.second
+		.content_block
+			margin-top: 69px
+			img
+				margin-top: 20px
+				width: 100%
+				height: 100%
+			&:last-child 
+				margin-bottom: 69px
+			.content__text
+				width: 100%
+				margin-bottom: 20px
+				.h_text
+					margin-bottom: 20px
+
+	.third
+		.content_text
+			width: 30%
+
+	.fourth
+		.fourth__center_info
+			width: 540px
+			margin: 
+				right: auto
+				left: auto
+		.food_block
+			&:nth-child(2)
+				flex-direction: row-reverse
+			&:nth-child(3)
+				flex-direction: row-reverse
+			&:nth-child(6)
+				flex-direction: row-reverse
+
+	.fifth
+		background:
+			position: 15% 90%, 85% 90%
+		.fifth__center_info
+			width: 70%
+			margin-top: 69px
+			margin-bottom: 69px
+			.block_menu2
+				width: 70%
+				.a_menu2
+					padding-right: 15px
+					margin:
+						right: 0px
+					a.menu2
+						width: 25%
+					&:last-child
+						padding-right: 10px
+	.sixth
+		.sixth_h
+			margin-top: 30px
+		ul.sixth__bloks
+			li.flex_item
+				margin-left: auto
+				margin-bottom: 30px
+			li.flex_item2
+				margin: auto
+					bottom: 30px
+
+	.eighth
+		.eighth__container
+			margin-top: 30px
+			margin-bottom: 40px
+			.eighth__form_decor
+				.element
+					margin: auto
+						top: 20px
+				.submit
+					margin-top: 40px
+		.center_element
+			justify-content: space-between
+
+	.tenth
+		.tenth__container
+			margin-bottom: 69px
+		ul
+			flex-direction: column
+		li.flex_item
+			margin: auto
+				top: 0
+			&:first-child
+				margin:
+					left: auto
+			&:last-child
+				margin:
+					right: auto
+					top: 56px
+			&:nth-child(2)
+				margin:
+					top: 56px
+
+	.eleventh
+		.eleventh__center_info
+			width: 90%
+
+	.footer
+		.footer_container
+			margin:
+				top: 0
+				bottom: 73px
+			justify-content: center
+		.left_content
+			margin: auto
+				top: 73px
+		.right_content
+			margin: auto
+				top: 73px
+			.columm2
+				width: 150px
+
+@media screen and (min-width: 0) and (max-width: 615px)
+	.header 
+		.header__center_info 
+			max-width: 80%
+		.h2
+			font-size: 50px
+
+	.third
+		.content_text
+			.h_text2
+				font-size: 15px
+			.text_third
+				font-size: 14px
+	.circle
+		width: 20px
+		height: 20px
+
+	.fourth
+		.food_block
+			margin: 
+				bottom: 20px
+			&:first-child
+				margin: 
+					top: 20px
+			&:nth-child(3)
+				flex-direction: column-reverse
+
+		.food_block__reverse_flex
+			flex-direction: column-reverse
+		.fourth__center_info
+			width: 270px
+
+	.sixth
+		ul.sixth__bloks
+			.img_background
+				width: 51px
+				height: 51px
+				margin: auto
+					right: 10px
+				img.img_item
+					width: 20px
+					height: 20px
+			li.flex_item
+				width: 100%
+				.content_text
+					width: 80%
+			li.flex_item2
+				margin: auto
+					bottom: 30px
+
+	.tenth
+		ul
+			flex-direction: column
+		li.flex_item
+			width: 300px
+			&:nth-child(2)
+				margin:
+					top: 56px
+			img.img_item
+				height: 266px
+
+	.eleventh
+		.eleventh__center_info
+			.eleventh__icons_social
+				a.fa_bg
+					width: 36px
+					height: 36px
+					margin: 
+						right: 16px
+					.fa
+						font-size: 20px
+
+	.footer
+		.footer_container
+			margin:
+				top: 0
+				bottom: 73px
+			justify-content: column
+		.left_content
+			margin: 
+				top: 73px
+			width: 270px
+		.right_content
+			margin:
+				top: 0
+			.columm2
+				margin: auto
+					top: 51px
+				width: 100px
+
+@media screen and (min-width: 0) and (max-width: 375px)
+	.header 
+		.h1
+			font-size: 60px
+		.h2
+			font-size: 40px
+	.button
+		padding: 2px 4px 0px 4px
+
+	.second
+		.content_block
+			justify-content: column
+			margin-top: 30px
+			img
+				margin-top: 20px
+				width: 100%
+				height: 100%
+			&:last-child 
+				margin-bottom: 40px
+
+	.sixth
+		ul.sixth__bloks
+			li.flex_item
+				margin-bottom: 20px
+				.content_text
+					width: 76%
+			li.flex_item2
+				margin:
+					bottom: 20px
+
+	.tenth
+		ul
+			flex-direction: column
+		li.flex_item
+			width: 252px
+			&:nth-child(2)
+				margin:
+					top: 56px
+			img.img_item
+				height: 223.7px
+
+	.footer
+		.footer_container
+			margin:
+				top: 0
+				bottom: 55px
+			justify-content: column
+		.left_content
+			padding: 
+				left: 0px
+			width: 80%
+			margin: auto
+				top: 55px
+		.right_content
+			margin:
+				top: 0
+			.columm2
+				margin: auto
+					top: 51px
+				width: 100px
