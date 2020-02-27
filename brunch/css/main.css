@@ -464,6 +464,7 @@ section {
 /*______________// third cекция ______________*/
 /*______________ fourth cекция ______________*/
 .fourth {
+  z-index: 100;
   background-image: url(../img/bg_2.png);
   background-color: #2a3b40;
   background-position: center center;
@@ -525,11 +526,31 @@ section {
 /*______________// fourth cекция ______________*/
 /*______________ fifth cекция ______________*/
 .fifth {
-  background-image: url(../img/bg_3.1.png), url(../img/bg_3.1.2.png);
-  background-repeat: repeat-y, repeat-y;
   background-color: rgba(255, 255, 255, 0.82);
-  background-position: 0 50%, 100% 50%;
+}
+
+.fifth .fifth__sprite div {
+  z-index: 5;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  overflow: auto;
+  width: 400px;
+  height: 429px;
+  position: absolute;
+  background-image: url(../img/bg_3.0.png);
+  background-position: 0 0;
+  background-repeat: no-repeat;
   background-size: cover, cover;
+}
+
+.fifth .fifth__sprite .fifth_right__sprite {
+  right: 0;
+  background-position: -1137px -1px;
+}
+
+.fifth .container {
+  z-index: 55;
 }
 
 .fifth .fifth__center_info {
@@ -586,9 +607,10 @@ section {
   color: #fff;
 }
 
-/*______________// fifth cекция ______________*/
+/*______________// fifth cекция ______________ */
 /*______________ sixth cекция ______________*/
 .sixth {
+  z-index: 100;
   background-image: url(../img/bg_3.2.png);
   background-color: #2a3b40;
   background-position: center center;
@@ -1068,8 +1090,12 @@ section {
         -ms-flex-direction: row-reverse;
             flex-direction: row-reverse;
   }
-  .fifth {
-    background-position: 15% 90%, 85% 90%;
+  .fifth .fifth__sprite div {
+    height: 460px;
+    background-position: -90px 0;
+  }
+  .fifth .fifth__sprite .fifth_right__sprite {
+    background-position: -1162px -1px;
   }
   .fifth .fifth__center_info {
     width: 70%;
@@ -1245,8 +1271,12 @@ section {
         -ms-flex-direction: row-reverse;
             flex-direction: row-reverse;
   }
-  .fifth {
-    background-position: 15% 90%, 85% 90%;
+  .fifth .fifth__sprite div {
+    height: 510px;
+    background-position: -138px 0px;
+  }
+  .fifth .fifth__sprite .fifth_right__sprite {
+    background-position: -1293px -1px;
   }
   .fifth .fifth__center_info {
     width: 70%;
@@ -1257,14 +1287,13 @@ section {
     width: 70%;
   }
   .fifth .fifth__center_info .block_menu2 .a_menu2 {
-    padding-right: 15px;
-    margin-right: 0px;
+    margin-right: 10px;
   }
   .fifth .fifth__center_info .block_menu2 .a_menu2 a.menu2 {
     width: 25%;
   }
   .fifth .fifth__center_info .block_menu2 .a_menu2:last-child {
-    padding-right: 10px;
+    margin-right: 10px;
   }
   .sixth .sixth_h {
     margin-top: 30px;
@@ -1339,6 +1368,17 @@ section {
   }
   .footer .right_content .columm2 {
     width: 150px;
+  }
+}
+
+@media screen and (min-width: 0) and (max-width: 668px) {
+  .fifth .fifth__sprite div {
+    height: 530px;
+    width: 200px;
+    background-position: -193px 0px;
+  }
+  .fifth .fifth__sprite .fifth_right__sprite {
+    background-position: -1510px -1px;
   }
 }
 
@@ -1481,6 +1521,13 @@ section {
   }
   .sixth ul.sixth__bloks li.flex_item2 {
     margin-bottom: 20px;
+  }
+  .fifth .fifth__sprite div {
+    height: 530px;
+    background-position: -264px 0px;
+  }
+  .fifth .fifth__sprite .fifth_right__sprite {
+    background-position: -1438px -1px;
   }
   .tenth ul {
     -webkit-box-orient: vertical;

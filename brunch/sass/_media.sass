@@ -38,8 +38,14 @@
 				flex-direction: row-reverse
 
 	.fifth
-		background:
-			position: 15% 90%, 85% 90%
+		.fifth__sprite
+			div
+				height: 460px
+				background:
+					position: -90px 0
+			.fifth_right__sprite
+				background:
+					position: -1162px -1px
 		.fifth__center_info
 			width: 70%
 
@@ -114,7 +120,7 @@
 
 		.flex__menu_logo
 			margin-top: 30px
-			user-select: none //не дет выделять текст MENU
+			user-select: none //не будет выделять текст в MENU
 			.menu__icon
 				display: inline-block
 				z-index: 999
@@ -176,8 +182,14 @@
 				flex-direction: row-reverse
 
 	.fifth
-		background:
-			position: 15% 90%, 85% 90%
+		.fifth__sprite
+			div
+				height: 510px
+				background:
+					position: -138px 0px
+			.fifth_right__sprite
+				background:
+					position: -1293px -1px
 		.fifth__center_info
 			width: 70%
 			margin-top: 69px
@@ -185,13 +197,13 @@
 			.block_menu2
 				width: 70%
 				.a_menu2
-					padding-right: 15px
 					margin:
-						right: 0px
+						right: 10px
 					a.menu2
 						width: 25%
 					&:last-child
-						padding-right: 10px
+						margin-right: 10px
+
 	.sixth
 		.sixth_h
 			margin-top: 30px
@@ -253,6 +265,18 @@
 				top: 73px
 			.columm2
 				width: 150px
+
+@media screen and (min-width: 0) and (max-width: 668px)
+	.fifth
+		.fifth__sprite
+			div
+				height: 530px
+				width: 200px
+				background:
+					position: -193px 0px
+			.fifth_right__sprite
+				background:
+					position: -1510px -1px
 
 @media screen and (min-width: 0) and (max-width: 615px)
 	.header 
@@ -373,7 +397,15 @@
 			li.flex_item2
 				margin:
 					bottom: 20px
-
+	.fifth
+		.fifth__sprite
+			div
+				height: 530px
+				background:
+					position: -264px 0px
+			.fifth_right__sprite
+				background:
+					position: -1438px -1px
 	.tenth
 		ul
 			flex-direction: column
