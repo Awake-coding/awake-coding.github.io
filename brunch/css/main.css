@@ -194,7 +194,7 @@ section {
 /*______________ header хедера ______________*/
 .header {
   min-height: 100vh;
-  background-image: url(../img/bg_1.png);
+  background-image: url(../img/bg_1.jpg);
   background-color: #2a3b40;
   background-repeat: no-repeat;
   background-size: cover;
@@ -465,7 +465,7 @@ section {
 /*______________ fourth cекция ______________*/
 .fourth {
   z-index: 100;
-  background-image: url(../img/bg_2.png);
+  background-image: url(../img/bg_2.jpg);
   background-color: #2a3b40;
   background-position: center center;
   background-repeat: no-repeat;
@@ -611,7 +611,7 @@ section {
 /*______________ sixth cекция ______________*/
 .sixth {
   z-index: 100;
-  background-image: url(../img/bg_3.2.png);
+  background-image: url(../img/bg_3.2.jpg);
   background-color: #2a3b40;
   background-position: center center;
   background-repeat: no-repeat;
@@ -686,7 +686,7 @@ section {
 /*______________// sixth cекция ______________*/
 /*______________ seventh cекция ______________*/
 .seventh {
-  background-image: url(../img/bg-4.png);
+  background-image: url(../img/bg-4.jpg);
   background-color: #2a3b40;
   background-position: center center;
   background-repeat: no-repeat;
@@ -830,7 +830,7 @@ section {
 /*______________// eighth cекция ______________*/
 /*______________ ninth cекция ______________*/
 .ninth {
-  background-image: url(../img/bg-5.png);
+  background-image: url(../img/bg-5.jpg);
   background-color: #2a3b40;
   background-position: center center;
   background-repeat: no-repeat;
