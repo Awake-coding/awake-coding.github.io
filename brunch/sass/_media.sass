@@ -1,4 +1,26 @@
-@import "color"
+@import "vars"
+
+@media screen and (max-width: 1182px)
+	// Адаптивность для карусели
+	.tenth
+		.prev-next-navigation
+			li
+				background-color: rgba(42, 59, 64, 0.869)
+				border-radius: 30%
+				text-align: center
+				width: 50px
+				height: 53px
+				font-size: 56px
+				top: 49%
+			.tenth__prev
+				left: 2%
+			.tenth__next
+				right: 2%
+		.siema__carousel
+			width: 100%
+		.tenth__bloks
+			li.flex_item
+				margin: 0 auto
 
 @media screen and (min-width: 800px) and (max-width: 1100px)
 	.container 
@@ -12,12 +34,13 @@
 				margin-bottom: 60px
 
 	.second 
-		.content_block
-			img
-				width: 45%
-				height: 45%
+		.second__content_block
 			.content__text
-				width: 55%
+				width: 54%
+				padding-right: 20px
+			&--animation-img
+				width: 324px
+				height: 221px
 
 	.third 
 		.content_text
@@ -69,18 +92,6 @@
 		.center_element
 			justify-content: space-between
 
-	.tenth
-		li.flex_item
-			margin: auto
-				top: 0
-			&:first-child
-				margin:
-					left: auto
-			&:last-child
-				margin:
-					right: auto
-					top: 56px
-
 	.eleventh
 		.eleventh__center_info
 			width: 90%
@@ -90,27 +101,29 @@
 			margin: 
 				top: 0
 				bottom: 73px
-			justify-content: center
 		.left_content
-			margin: auto
+			width: 48%
+			margin:
 				top: 73px
 		.right_content
-			margin: auto
+			margin:
 				top: 73px
 			.columm2
-				width: 150px
+				width: 7.5em
 				.h2
 					text-align: center
 				.info_bocks_a
 					text-align: center
 
-@media screen and (min-width: 0) and (max-width: 800px)
+@media screen and (min-width: 0px) and (max-width: 800px)
 	.container 
 		width: 90%
 
 	.header 
+		.header_info
+			height: 390px
 		.header__center_info 
-			max-width: 90%
+			width: 90%
 			.text_header
 				margin-top: 30px
 				margin-bottom: 30px
@@ -118,9 +131,10 @@
 					left: 15px
 					right: 15px
 
+		// MENU mobile
 		.flex__menu_logo
 			margin-top: 30px
-			user-select: none //не будет выделять текст в MENU
+			user-select: none //не дет выделять текст MENU
 			.menu__icon
 				display: inline-block
 				z-index: 999
@@ -149,19 +163,16 @@
 						left: 25%
 
 	.second
-		.content_block
-			margin-top: 69px
-			img
-				margin-top: 20px
-				width: 100%
-				height: 100%
-			&:last-child 
-				margin-bottom: 69px
+		.second__content_block
+			justify-content: center
 			.content__text
-				width: 100%
 				margin-bottom: 20px
 				.h_text
 					margin-bottom: 20px
+			&--animation-img
+				margin-top: 20px
+				width: 500px
+				height: 327px
 
 	.third
 		.content_text
@@ -229,23 +240,15 @@
 			justify-content: space-between
 
 	.tenth
+		.prev-next-navigation 
+			li
+				top: 50%
+			.tenth__prev
+				left: 7%
+			.tenth__next
+				right: 7%
 		.tenth__container
 			margin-bottom: 69px
-		ul
-			flex-direction: column
-		li.flex_item
-			margin: auto
-				top: 0
-			&:first-child
-				margin:
-					left: auto
-			&:last-child
-				margin:
-					right: auto
-					top: 56px
-			&:nth-child(2)
-				margin:
-					top: 56px
 
 	.eleventh
 		.eleventh__center_info
@@ -258,15 +261,15 @@
 				bottom: 73px
 			justify-content: center
 		.left_content
-			margin: auto
+			margin:
 				top: 73px
 		.right_content
-			margin: auto
+			margin:
 				top: 73px
 			.columm2
 				width: 150px
 
-@media screen and (min-width: 0) and (max-width: 668px)
+@media screen and (max-width: 668px)
 	.fifth
 		.fifth__sprite
 			div
@@ -278,12 +281,22 @@
 				background:
 					position: -1510px -1px
 
-@media screen and (min-width: 0) and (max-width: 615px)
+@media screen and (max-width: 615px)
 	.header 
 		.header__center_info 
 			max-width: 80%
 		.h2
 			font-size: 50px
+
+	.second
+		.second__content_block
+			margin-bottom: 40px
+			.content__text
+				width: 99%
+			&--animation-img
+				margin-top: 60px
+				height: 270px
+				width: 90%
 
 	.third
 		.content_text
@@ -329,15 +342,12 @@
 					bottom: 30px
 
 	.tenth
-		ul
-			flex-direction: column
-		li.flex_item
-			width: 300px
-			&:nth-child(2)
-				margin:
-					top: 56px
-			img.img_item
-				height: 266px
+		.tenth__bloks
+			li.flex_item
+				width: 300px
+				img.img_item
+					width: 100%
+					height: 266px
 
 	.eleventh
 		.eleventh__center_info
@@ -368,7 +378,15 @@
 					top: 51px
 				width: 100px
 
-@media screen and (min-width: 0) and (max-width: 375px)
+@media screen and (min-width: 510px) and (max-width: 615px)
+	.second
+		.second__content_block
+			margin-bottom: 40px
+			&--animation-img
+				margin-top: 20px
+				height: 320px
+
+@media screen and (max-width: 375px)
 	.header 
 		.h1
 			font-size: 60px
@@ -378,15 +396,12 @@
 		padding: 2px 4px 0px 4px
 
 	.second
-		.content_block
-			justify-content: column
-			margin-top: 30px
-			img
-				margin-top: 20px
-				width: 100%
-				height: 100%
-			&:last-child 
-				margin-bottom: 40px
+		.second__content_block
+			margin:
+				top: 30px
+				bottom: -20px
+			&--animation-img
+				margin-top: 40px
 
 	.sixth
 		ul.sixth__bloks
@@ -407,26 +422,22 @@
 				background:
 					position: -1438px -1px
 	.tenth
-		ul
-			flex-direction: column
-		li.flex_item
-			width: 252px
-			&:nth-child(2)
-				margin:
-					top: 56px
-			img.img_item
-				height: 223.7px
+		.tenth__bloks
+			li.flex_item
+				width: 282px
+				img.img_item
+					width: 100%
+					height: 252px
 
 	.footer
 		.footer_container
 			margin:
 				top: 0
 				bottom: 55px
-			justify-content: column
 		.left_content
 			padding: 
 				left: 0px
-			width: 80%
+			width: 93%
 			margin: auto
 				top: 55px
 		.right_content

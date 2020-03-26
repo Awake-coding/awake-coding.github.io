@@ -3,57 +3,73 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Brunch</title>
-	<meta name="description" content="">
+	<!-- в description пишут-описание страницы -->
+	<meta name="description" content="Restaurant website - Brunch. My website for portfolio. Мой сайт для портфолио.">
+	<!-- в keywords пишут теги по тематике страницы, не всегда учитываются при выдаче результатов поисковыми системами, не прописывать для страниц формы обратной связи, контактов и т.д.-->
+	<meta name="keywords" content="brunch, eat, restaurant, menu, food menu">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<meta name="theme-color" content="#2a3b40">
-	<meta name="msapplication-navbutton-color" content="#2a3b40">
-	<meta name="apple-mobile-web-app-status-bar-style" content="#2a3b40">
-	<link rel="stylesheet" type="text/css" href="css/libs.min.css">
+	<meta name="theme-color" content="#2a3b40"><!-- Chrome, Firefox OS and Opera -->
+	<meta name="msapplication-navbutton-color" content="#2a3b40"><!-- Windows Phone -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="#2a3b40"><!-- iOS Safari -->
+	<link rel="stylesheet" type="text/css" href="css/libs.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 <body>
 	<header class="header">
-		<div class="container flex">
-				<div class="flex__menu_logo flex">
-					<a href="index.html" class="logo">Brunch</a>
-					<nav class="menu">
-						<div class=" flex menu__icon">
-							<span></span>
-							<span></span>
-							<span></span>
-							<span></span>
-						</div>
-						<div class="flex menu__links">
-							<ul class="flex">
-								<li><a href="#third" class="scrollto menu__links-item">Welcome</a></li>
-								<li><a href="#fourth" class="scrollto menu__links-item">Menu</a></li>
-								<li><a href="#fifth" class="scrollto menu__links-item">Events</a></li>
-								<li><a href="#eighth" class="scrollto menu__links-item">Contact</a></li>
-							</ul>
-						</div>
-					</nav>
-				</div>
+		<div class="container">
+			<div class="flex__menu_logo flex">
+				<!-- Logo -->
+				<a href="index.html" class="logo">Brunch</a>
+				<!-- Menu -->
+				<nav class="menu">
+					<!-- иконка-гамбургер меню -->
+					<div class="menu__icon">
+						<span></span>
+						<span></span>
+						<span></span>
+						<span></span>
+					</div>
+					<ul class="menu__links flex">
+						<!-- .scrollto - плавный переход по нажанию, jQuery -->
+						<!-- menu__links-item - по клику на ссылку с моб. меню, ставиться "overflow:visible" для тегов "html,body" jQuery-->
+						<li><a href="#third" class="scrollto menu__links-item">Welcome</a></li>
+						<li><a href="#fourth" class="scrollto menu__links-item">Menu</a></li>
+						<li><a href="#fifth" class="scrollto menu__links-item">Events</a></li>
+						<li><a href="#eighth" class="scrollto menu__links-item">Contact</a></li>
+					</ul>
+				</nav>
+			</div>
+			<!-- Блок - центрирован по вертикали и горизонтали -->
+			<div class="header_info">
 				<div class="header__center_info">
+					<!-- animated wobble - для анимации блока через "Animate.css" -->
 					<div class="text_header animated wobble">
 						<h1 class="h1">Brunch</h1>
 						<h2 class="h2">Full WebSite</h2>
+						<!-- Button с павным переходом на следуйщую секцию-->
 						<a href="#second" class="button scrollto">Read More</a>
 					</div>
 				</div>
+			</div>
 		</div>
 	</header>
 
 
 	<section class="second" id="second">
 		<div class="container flex">
-			<div class="content_block flex">
+			<div class="second__content_block flex">
 				<div class="content__text">
 					<strong class="h_text">Indian traditional flavours</strong>
 					<p class="text_second">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris</p>
 				</div>
-				<img src="img/img_2section.jpg" alt="Rectangle" title="Rectangle">
+				<div class="second__content_block--animation-img">
+					<img src="img/img_2section.jpg" alt="Rectangle" title="Rectangle">
+					<img src="img/img_2section.jpg" alt="Rectangle" title="Rectangle">
+					<img src="img/img_2section.jpg" alt="Rectangle" title="Rectangle">
+					<img src="img/img_2section.jpg" alt="Rectangle" title="Rectangle">
+				</div>
 			</div>
 		</div>
 	</section>
@@ -166,6 +182,7 @@
 
 
 	<section class="fifth" id="fifth">
+		<!-- Блок спрайта для заднего фона секции fifth, один блок-спрайта слева, второй справа-->
 		<div class="fifth__sprite">
 			<div class="fifth_left__sprite"></div>
 			<div class="fifth_right__sprite"></div>
@@ -194,81 +211,81 @@
 		<div class="background_0"></div>
 		<div class="background_light flex">
 			<div class="container flex">
-					<div class="sixth_h">
-						<h1 class="h1">Discover</h1>
-						<h2 class="h2">our new menu</h2>
-					</div>
-					<ul class="sixth__bloks flex">
-						<li class="flex_item flex">
-							<div class="img_background flex">
-								<img src="img/img7sec_2.png" alt="Tikka chicken" title="Tikka chicken" class="img_item">
-							</div>
-							<div class="content_text">
-								<strong class="h_text">Tikka chicken</strong>
-								<p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do oculis <strong class="price">$14.95</strong></p>
-							</div>
-						</li>
-						<li class="flex_item flex flex_item2">
-							<div class="img_background flex">
-								<img src="img/img7sec_4.png" alt="SOUP OF the day" title="SOUP OF the day" class="img_item">
-							</div>
-							<div class="content_text">
-								<strong class="h_text">SOUP OF the day</strong>
-								<p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do oculis <strong class="price">$7.95</strong></p>
-							</div>
-						</li>
-						<li class="flex_item flex">
-							<div class="img_background flex">
-								<img src="img/img7sec_3.png" alt="PLAIN PAPADUMS" title="PLAIN PAPADUMS" class="img_item">
-							</div>
-							<div class="content_text">
-								<strong class="h_text">PLAIN PAPADUMS</strong>
-								<p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do oculis <strong class="price">$1.95</strong></p>
-							</div>
-						</li>
-						<li class="flex_item flex flex_item2">
-							<div class="img_background flex">
-								<img src="img/img7sec_1.png" alt="YELLOW CURRY" title="YELLOW CURRY" class="img_item">
-							</div>
-							<div class="content_text">
-								<strong class="h_text">YELLOW CURRY</strong>
-								<p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do oculis <strong class="price">$15.95</strong></p>
-							</div>
-						</li>
-						<li class="flex_item flex">
-							<div class="img_background flex">
-								<img src="img/img7sec_6.png" alt="CHicken curry" title="CHicken curry" class="img_item">
-							</div>
-							<div class="content_text">
-								<strong class="h_text">CHicken curry</strong>
-								<p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do oculis <strong class="price">$12.95</strong></p>
-							</div>
-						</li>
-						<li class="flex_item flex flex_item2">
-							<div class="img_background flex">
-								<img src="img/img7sec_5.png" alt="SPICY MEatballs" title="SPICY MEatballs" class="img_item">
-							</div>
-							<div class="content_text">
-								<strong class="h_text">SPICY MEatballs</strong>
-								<p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do oculis <strong class="price">$18.95</strong></p>
-							</div>
-						</li>
-					</ul>
+				<div class="sixth_h">
+					<h1 class="h1">Discover</h1>
+					<h2 class="h2">Our new menu</h2>
+				</div>
+				<ul class="sixth__bloks flex">
+					<li class="flex_item flex">
+						<div class="img_background flex">
+							<img src="img/img7sec_2.png" alt="Tikka chicken" title="Tikka chicken" class="img_item">
+						</div>
+						<div class="content_text">
+							<strong class="h_text">Tikka chicken</strong>
+							<p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do oculis <strong class="price">$14.95</strong></p>
+						</div>
+					</li>
+					<li class="flex_item flex flex_item2">
+						<div class="img_background flex">
+							<img src="img/img7sec_4.png" alt="SOUP OF the day" title="SOUP OF the day" class="img_item">
+						</div>
+						<div class="content_text">
+							<strong class="h_text">SOUP OF the day</strong>
+							<p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do oculis <strong class="price">$7.95</strong></p>
+						</div>
+					</li>
+					<li class="flex_item flex">
+						<div class="img_background flex">
+							<img src="img/img7sec_3.png" alt="PLAIN PAPADUMS" title="PLAIN PAPADUMS" class="img_item">
+						</div>
+						<div class="content_text">
+							<strong class="h_text">PLAIN PAPADUMS</strong>
+							<p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do oculis <strong class="price">$1.95</strong></p>
+						</div>
+					</li>
+					<li class="flex_item flex flex_item2">
+						<div class="img_background flex">
+							<img src="img/img7sec_1.png" alt="YELLOW CURRY" title="YELLOW CURRY" class="img_item">
+						</div>
+						<div class="content_text">
+							<strong class="h_text">YELLOW CURRY</strong>
+							<p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do oculis <strong class="price">$15.95</strong></p>
+						</div>
+					</li>
+					<li class="flex_item flex">
+						<div class="img_background flex">
+							<img src="img/img7sec_6.png" alt="CHicken curry" title="CHicken curry" class="img_item">
+						</div>
+						<div class="content_text">
+							<strong class="h_text">CHicken curry</strong>
+							<p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do oculis <strong class="price">$12.95</strong></p>
+						</div>
+					</li>
+					<li class="flex_item flex flex_item2">
+						<div class="img_background flex">
+							<img src="img/img7sec_5.png" alt="SPICY MEatballs" title="SPICY MEatballs" class="img_item">
+						</div>
+						<div class="content_text">
+							<strong class="h_text">SPICY MEatballs</strong>
+							<p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do oculis <strong class="price">$18.95</strong></p>
+						</div>
+					</li>
+				</ul>
 			</div>
 		</div>
 	</section>
 
 
-
+	<!-- По макету секция seventh была с картинкой и пустая-->
 	<section class="seventh">
 		<div class="container flex">
 			
 		</div>
 	</section>
 
-
+	<!-- Секция - с отправкой формы -->
 	<section class="eighth" id="eighth">
-		<div class="container flex">
+		<div class="container">
 			<div class="eighth__container">
 				<div class="eighth_h">
 					<h1 class="h1">Book here</h1>
@@ -276,7 +293,7 @@
 				<div class="eighth__form_decor">
 					<form action="" method="" class="eighth__form flex">
 						<div class="center_element flex">
-							<div class="element flex">
+							<div class="element">
 								<label class="label" for="people">How many people?</label>
 								<select name="people" id="people" class="people fields_eighth_execution" required>
 									<option selected="selected">2 people</option>
@@ -286,23 +303,23 @@
 									<option>6 people</option>
 								</select>
 							</div>
-							<div class="element flex element3">
+							<div class="element element3">
 								<label class="label" for="date">When is your date?</label>
 								<input type="text" id="date" name="date" placeholder="22-10-2020" class="fields_eighth_execution calendar" required />
 							</div>
-							<div class="element flex element2">
+							<div class="element element2">
 								<label class="label" for="time">Time</label>
 								<input type="text" id="time" name="time" placeholder="10:00am" class="fields_eighth_execution time" required />
 							</div>
-							<div class="element flex">
+							<div class="element">
 								<label class="label" for="name">Name</label>
 								<input type="text" id="name" name="name" placeholder="Full name" class="fields_eighth_execution" required />
 							</div>
-							<div class="element flex element3">
+							<div class="element element3">
 								<label class="label" for="email">Email</label>
 								<input type="email" id="email" name="email" placeholder="Your email adress" class="fields_eighth_execution" required />
 							</div>
-							<div class="element flex element2">
+							<div class="element element2">
 								<label class="label" for="phone">Phone</label>
 								<input type="tel" id="phone" name="phone" placeholder="Your phone" class="fields_eighth_execution" required />
 							</div>
@@ -316,62 +333,84 @@
 		</div>
 	</section>
 
-
+	<!-- По макету секция ninth была с картинкой и пустая-->
 	<section class="ninth">
 		<div class="container flex">
 			
 		</div>
 	</section>
 
-
+	<!-- Секция с каруселью -->
 	<section class="tenth">
 		<div class="container">
 			<div class="tenth__container">
 				<div class="tenth_h">
-					<div class="h1">Discover</div>
-					<div class="h2">Our new menu</div>
+					<h1 class="h1">Discover</h1>
+					<h2 class="h2">Our new menu</h2>
 				</div>
-				<ul class="tenth__bloks flex">
-					<li class="flex_item flex">
-						<img src="img/img11sec_2.jpg" alt="Food" title="Food" class="img_item">
-						<div class="block_text">
-							<div class="h1_text">Food / 16th March, 2019</div>
-							<div class="h2_text">Lorem ipsum dolor sit</div>
-							<div class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed</div>
-							<div class="read_more_otstyp">
-								<a href="#" class="read_more">Read more</a>
-							</div>
-						</div>
+				<!-- кнопки перелистывания -->
+				<ul class="prev-next-navigation">
+					<li class="tenth__prev"><i class="fa fa-chevron-left" aria-hidden="true"></i>
 					</li>
-					<li class="flex_item flex">
-						<img src="img/img11sec_3.jpg" alt="Spices" title="Spices" class="img_item">
-						<div class="block_text">
-							<div class="h1_text">Spices / 16th March, 2019</div>
-							<div class="h2_text">Lorem ipsum dolor sit</div>
-							<div class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed</div>
-							<div class="read_more_otstyp">
-								<a href="#" class="read_more">Read more</a>
-							</div>
-						</div>
+					<li class="tenth__next"><i class="fa fa-chevron-right" aria-hidden="true"></i>
 					</li>
-					<li class="flex_item flex">
-						<img src="img/img11sec_1.jpg" alt="Chicken Curry" title="Chicken Curry" class="img_item">
-						<div class="block_text">
-							<div class="h1_text">Chicken Curry / 16th March, 2019</div>
-							<div class="h2_text">Lorem ipsum dolor sit</div>
-							<div class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed</div>
-							<div class="read_more_otstyp">
-								<a href="#" class="read_more">Read more</a>
+				</ul>
+				<ul class="tenth__bloks ">
+					<!-- Ккарусель для section tenth-->
+					<div class="siema__carousel">
+						<li class="flex_item flex">
+							<img src="img/img11sec_2.jpg" alt="Food" title="Food" class="img_item">
+							<div class="block_text">
+								<div class="h1_text">Food / 15th February, 2033</div>
+								<div class="h2_text">Lorem ipsum dolor sit</div>
+								<div class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed</div>
+								<div class="read_more_otstyp">
+									<a href="#" class="read_more">Read more</a>
+								</div>
 							</div>
-						</div>
-					</li>
+						</li>
+						<li class="flex_item flex">
+							<img src="img/img11sec_3.jpg" alt="Spices" title="Spices" class="img_item">
+							<div class="block_text">
+								<div class="h1_text">Spices / 15th February, 2033</div>
+								<div class="h2_text">Lorem ipsum dolor sit</div>
+								<div class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed</div>
+								<div class="read_more_otstyp">
+									<a href="#" class="read_more">Read more</a>
+								</div>
+							</div>
+						</li>
+						<li class="flex_item flex">
+							<img src="img/img11sec_1.jpg" alt="Chicken Curry" title="Chicken Curry" class="img_item">
+							<div class="block_text">
+								<div class="h1_text">Chicken Curry / 15th February, 2033</div>
+								<div class="h2_text">Lorem ipsum dolor sit</div>
+								<div class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed</div>
+								<div class="read_more_otstyp">
+									<a href="#" class="read_more">Read more</a>
+								</div>
+							</div>
+						</li>
+						<!-- Блок для примера работы сладера, когда блоков больше 3-х, иначе когда разширение больше 1183px не возможно будет проверить его работу -->
+						<li class="flex_item flex">
+							<img src="img/img11sec_4.jpg" alt="Chicken Curry" title="Chicken Curry" class="img_item">
+							<div class="block_text">
+								<div class="h1_text">Curry Spices / 15th February, 2033</div>
+								<div class="h2_text">Lorem ipsum dolor sit</div>
+								<div class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed</div>
+								<div class="read_more_otstyp">
+									<a href="#" class="read_more">Read more</a>
+								</div>
+							</div>
+						</li>
+					</div>
 				</ul>
 			</div>
 		</div>
 	</section>
 
 
-
+	<!-- Секция контактов на социальные сети -->
 	<section class="eleventh">
 		<div class="container">
 			<div class="eleventh__center_info">
