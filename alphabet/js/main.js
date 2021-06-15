@@ -1,4 +1,4 @@
-"use strict" //*Включает строгую проверку объявлена ли переменная (https://learn.javascript.ru/strict-mode)
+'use strict' //*Включает строгую проверку объявлена ли переменная (https://learn.javascript.ru/strict-mode)
 
 //___ Variables ___
 /* Массивы алфавитов */
@@ -14,18 +14,18 @@ const ruBigArr = [
 const ruSmallArr = [
       'а', 'б', 'в', 'г', 'д', 'е', 'ё', 'ж', 'з', 'и', 'й', 'к', 'л', 'м', 'н', 'о', 'п', 'р', 'с', 'т', 'у', 'ф', 'х', 'ц', 'ч', 'ш', 'щ', 'ъ', 'ы', 'ь', 'э', 'ю', 'я'
 ]
-const ruToEnBig__Arr = [
+const ruToEnBigArr = [
       'A', 'B', 'V', 'G', 'D', 'E', 'Yo(E)', 'Zh', 'Z', 'I', 'Y(i)', 'K', 'L', 'M', 'N', 'O', 'P', 'R', 'S', 'T', 'U', 'F', 'Kh', 'Ts', 'Ch', 'Sh', 'Shch', '\'\'', 'Y', '\'', 'E', 'Yu(iu)', 'Ya(ia)'
 ]
-const ruToEnSmall__Arr = []
+const ruToEnSmallArr = []
 
 /* Длинна массивов */
-const length__enBigArr        = enBigArr.length          //*EnBig       (26)
-const length__enSmallArr      = enSmallArr.length        //*EnSmall     (26)
-const length__ruBigArr        = ruBigArr.length          //*RuBig       (33)
-const length__ruSmallArr      = ruSmallArr.length        //*RuSmall     (33)
-const length__ruToEnBigArr    = ruToEnBig__Arr.length    //*RuToEnBIG   (33)
-const length__ruToEnSmallArr  = ruToEnSmall__Arr.length  //*RuToEnSMALL (33)
+const length__enBigArr       = enBigArr.length       //*EnBig       (26)
+const length__enSmallArr     = enSmallArr.length     //*EnSmall     (26)
+const length__ruBigArr       = ruBigArr.length       //*RuBig       (33)
+const length__ruSmallArr     = ruSmallArr.length     //*RuSmall     (33)
+const length__ruToEnBigArr   = ruToEnBigArr.length   //*RuToEnBIG   (33)
+const length__ruToEnSmallArr = ruToEnSmallArr.length //*RuToEnSMALL (33)
 
 /* Самый длинный массив */
 const lengthMax__arr = Math.max(
@@ -38,7 +38,7 @@ const lengthMax__arr = Math.max(
 )
 
 /* Переменные для создания стобцов и ячеек с буквами */
-const classCol = "col"  //* class - для столбца
+const classCol = 'col'  //* class - для столбца
 let idCol               //* id - столбца функции
 let nameCol_HTML        //* text - для первой ячкейки столбца
 let col                 //* Столбец
@@ -75,8 +75,8 @@ window.onload = function Main() {
 //___ Functions ___
 /* Create number Column -------------------------*/
 function createNumCol() {
-  idCol = "colNumber" //// id столбика
-  nameCol_HTML = "№"  //// имя столбика
+  idCol = 'colNumber' //// id столбика
+  nameCol_HTML = '№'  //// имя столбика
 
   //// create column
   col = document.createElement('div')
@@ -86,14 +86,14 @@ function createNumCol() {
 
   //// create name column
   nameCol = document.createElement('div')
-  nameCol.className = "nameCol"
+  nameCol.className = 'nameCol'
   nameCol.innerHTML = nameCol_HTML
   document.getElementById(idCol).appendChild(nameCol)
 
   //// create cell number
   for (let i = 0; i < lengthMax__arr; i++) {
     cell = document.createElement('div')
-    cell.className = "number"
+    cell.className = 'number'
     cell.innerHTML = i + 1
     document.getElementById(idCol).appendChild(cell)
   }
@@ -101,8 +101,8 @@ function createNumCol() {
 
 /* Create En Column -----------------------------*/
 function createEnCol() {
-  idCol = "colEn"     //// id столбика
-  nameCol_HTML = "En" //// имя столбика
+  idCol = 'colEn'     //// id столбика
+  nameCol_HTML = 'En' //// имя столбика
 
   //// create column
   col = document.createElement('div')
@@ -112,7 +112,7 @@ function createEnCol() {
 
   //// create name column
   nameCol = document.createElement('div')
-  nameCol.className = "nameCol"
+  nameCol.className = 'nameCol'
   nameCol.innerHTML = nameCol_HTML
   document.getElementById(idCol).appendChild(nameCol)
 
@@ -121,27 +121,27 @@ function createEnCol() {
     letterBig = enBigArr[i]
     letterSmall = enSmallArr[i]
     if(letterBig==undefined && letterSmall==undefined){
-      letterBig = "<div class='empty__letter'>0</div>"
-      letterSmall = "<div class='empty__letter'>0</div>"
+      letterBig = '<div class="empty__letter">0</div>'
+      letterSmall = '<div class="empty__letter">0</div>'
     }
     else if (letterBig==undefined || letterSmall==undefined){
-      if(letterBig==undefined) { letterBig = "<div class='empty__letter'>0</div>" }
-      else { letterSmall = "<div class='empty__letter'>0</div>" }
+      if(letterBig==undefined) { letterBig = '<div class="empty__letter">0</div>' }
+      else { letterSmall = '<div class="empty__letter">0</div>' }
     }
-    else { letterSmall = "( "+letterSmall+" )" }
+    else { letterSmall = '( '+letterSmall+' )' }
 
     cell = document.createElement('div')
-    cell.className = "letters";
-    cell.innerHTML = "<div class='big'>"+letterBig+"</div>" +
-                "<div class='small'>"+letterSmall+"</div>"
+    cell.className = 'letters';
+    cell.innerHTML = '<div class="big">'+letterBig+'</div>' +
+                '<div class="small">'+letterSmall+'</div>'
     document.getElementById(idCol).appendChild(cell)
   }
 }
 
 /* Create Ru Column -----------------------------*/
 function createRuCol() {
-  idCol = "colRu"     //// id столбика
-  nameCol_HTML = "Ru" //// имя столбика
+  idCol = 'colRu'     //// id столбика
+  nameCol_HTML = 'Ru' //// имя столбика
 
   //// create column
   col = document.createElement('div')
@@ -151,7 +151,7 @@ function createRuCol() {
 
   //// create name column
   nameCol = document.createElement('div')
-  nameCol.className = "nameCol"
+  nameCol.className = 'nameCol'
   nameCol.innerHTML = nameCol_HTML
   document.getElementById(idCol).appendChild(nameCol)
 
@@ -160,27 +160,27 @@ function createRuCol() {
     letterBig = ruBigArr[i]
     letterSmall = ruSmallArr[i]
     if(letterBig==undefined && letterSmall==undefined){
-      letterBig = "<div class='empty__letter'>0</div>"
-      letterSmall = "<div class='empty__letter'>0</div>"
+      letterBig = '<div class="empty__letter">0</div>'
+      letterSmall = '<div class="empty__letter">0</div>'
     }
     else if (letterBig==undefined || letterSmall==undefined){
-      if(letterBig==undefined) { letterBig = "<div class='empty__letter'>0</div>" }
-      else { letterSmall = "<div class='empty__letter'>0</div>" }
+      if(letterBig==undefined) { letterBig = '<div class="empty__letter">0</div>' }
+      else { letterSmall = '<div class="empty__letter">0</div>' }
     }
-    else { letterSmall = "( "+letterSmall+" )" }
+    else { letterSmall = '( '+letterSmall+' )' }
 
     cell = document.createElement('div')
-    cell.className = "letters"
-    cell.innerHTML = "<div class='big'>"+letterBig+"</div>" +
-                "<div class='small'>"+letterSmall+"</div>"
+    cell.className = 'letters'
+    cell.innerHTML = '<div class="big">'+letterBig+'</div>' +
+                '<div class="small">'+letterSmall+'</div>'
     document.getElementById(idCol).appendChild(cell)
   }
 }
 
 /* Create RuToEn Column -------------------------*/
 function createRuToEnCol() {
-  idCol = "colRuToEn"       //// id столбика
-  nameCol_HTML = "Ru > En"  //// имя столбика
+  idCol = 'colRuToEn'       //// id столбика
+  nameCol_HTML = 'Ru > En'  //// имя столбика
 
   //// create column
   col = document.createElement('div')
@@ -190,28 +190,28 @@ function createRuToEnCol() {
 
   //// create name column
   nameCol = document.createElement('div')
-  nameCol.className = "nameCol"
+  nameCol.className = 'nameCol'
   nameCol.innerHTML = nameCol_HTML
   document.getElementById(idCol).appendChild(nameCol)
 
   //// create cell letters
   for (let i = 0; i < lengthMax__arr; i++) {
-    letterBig = ruToEnBig__Arr[i]
-    letterSmall = ruToEnSmall__Arr[i]
+    letterBig = ruToEnBigArr[i]
+    letterSmall = ruToEnSmallArr[i]
     if(letterBig==undefined && letterSmall==undefined){
-      letterBig = "<div class='empty__letter'>0</div>"
-      letterSmall = "<div class='empty__letter'>0</div>"
+      letterBig = '<div class="empty__letter">0</div>'
+      letterSmall = '<div class="empty__letter">0</div>'
     }
     else if (letterBig==undefined || letterSmall==undefined){
-      if(letterBig==undefined) { letterBig = "<div class='empty__letter'>0</div>" }
-      else { letterSmall = "<div class='empty__letter'>0</div>" }
+      if(letterBig==undefined) { letterBig = '<div class="empty__letter">0</div>' }
+      else { letterSmall = '<div class="empty__letter">0</div>' }
     }
-    else { letterSmall = "( "+letterSmall+" )" }
+    else { letterSmall = '( '+letterSmall+' )' }
 
     cell = document.createElement('div')
-    cell.className = "letters"
-    cell.innerHTML = "<div class='big'>"+letterBig+"</div>"
-                      +"<div class='small'>"+letterSmall+"</div>"
+    cell.className = 'letters'
+    cell.innerHTML = '<div class="big">'+letterBig+'</div>'
+                      +'<div class="small">'+letterSmall+'</div>'
     document.getElementById(idCol).appendChild(cell)
   }
 }
