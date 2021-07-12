@@ -116,13 +116,13 @@ function createCol( idCol='', nameCol_HTML='', arrayLetterBig=[], arrayLetterSma
     col = document.createElement('div');
     col.className = 'col';
     col.id = idCol;
-    document.getElementById(idTable).appendChild(col);
+    document.getElementById(idTable).append(col);
 
     //// create name column
     nameCol = document.createElement('tr');
     nameCol.className = 'nameCol';
     nameCol.innerHTML = '<th class="name" colspan=2>' + nameCol_HTML + '</th>';
-    document.getElementById(idCol).appendChild(nameCol);
+    document.getElementById(idCol).append(nameCol);
 
     if ( arrayLetterBig === null && arrayLetterSmall === null ) {
       //// create cell number
@@ -130,7 +130,7 @@ function createCol( idCol='', nameCol_HTML='', arrayLetterBig=[], arrayLetterSma
         cell = document.createElement('tr');
         cell.className = 'number';
         cell.innerHTML = '<td>' + (i + 1) + '</td>'; // Начало с 1
-        document.getElementById(idCol).appendChild(cell);
+        document.getElementById(idCol).append(cell);
       }
     } else {
       //// create cell letters
@@ -153,7 +153,7 @@ function createCol( idCol='', nameCol_HTML='', arrayLetterBig=[], arrayLetterSma
         cell.className = 'letters';
         cell.innerHTML = '<td><div class="big">' + letterBig + '</div>' +
                          '<div class="small">'   + letterSmall + '</div></td>';
-        document.getElementById(idCol).appendChild(cell);
+        document.getElementById(idCol).append(cell);
       }
     }
   } else {
