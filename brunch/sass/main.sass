@@ -1,271 +1,153 @@
-@import "fonts" // подключаем шрифты
-@import "vars" // переменные с основными цветами и дефолтным шрифтом
-*
-	-webkit-box-sizing: border-box
-	-moz-box-sizing: border-box
-	box-sizing: border-box
-	&:before, &:after
-		-webkit-box-sizing: border-box
-		-moz-box-sizing: border-box
-		box-sizing: border-box
-
-html, body
-	height: 100%
-
-*
-	margin: 0
-	padding: 0
-
-body
-	font-size: 16px
-	min-width: 320px
-	line-height: 1.75
-	font-family: $default-font
-	opacity: 1
-	background-color: $accent_coloured
-
-.container 
-	padding: 0
-	margin: 0 auto
-	width: 1085px
-	position: relative
-
-.flex
-	display: flex
-	flex-wrap: wrap
+//___ config ___
+//* Vars, Fonts, Imports Library, default 1 CSS */
+@import "_config"
 
 
-.h1
-	line-height: 1
-	font-family: "cookie_exemple", sans-serif
-	font-size: 52px
-	color: $accent_coloured
-	font-weight: bold
-
-.h2
-	color: $h_coloured
-	font-size: 40px
-	font-weight: bold
-
-.h2, .h3, .h4, .h5
-	line-height: 1
-	text-transform: uppercase
-
-b, strong
-	font-weight: bold
-
-/*______________ button ______________*/
-.button 
-	display: inline-block
-	border: none
-	color: $accent_coloured // цвет текста кноки
-	text-decoration: none
-	background-color: #fff
-	padding: 5px 25px
-	font-size: 30px
-	text-transform: uppercase
-	font-weight: 600
-	letter-spacing: -1px // pастояния между букв
-	border-radius: 2px
-	text-align: center
-	position: relative
-	outline: none
-	transition: background-color .2s ease
-	&::after
-		transition: all .4s ease
-		position: absolute
-		content: ''
-		height: 4px
-		bottom: 0
-		width: 100%
-		background-color: darken(#fff, 50%)
-		opacity: .18
-		border-bottom-left-radius: 2px
-		border-bottom-right-radius: 2px
-		left: 0
-	&:focus, &:hover
-		text-decoration: none
-		color: $accent_coloured
-	&:hover
-		background-color: lighten(#fff, 5%)
-		opacity: .9
-		&::after
-			opacity: .8
-	&:active
-		background-color: darken(#fff, 5%)
-		&::after
-			opacity: .32
-/*______________// button ______________*/
 
 
-section, header
-	position: relative
-	background-size: cover
-	background-position: 50% 50%
-
-section 
-	background-color: $accent_coloured
-
-.img-responsive
-	display: block
-	max-width: 100%
-	height: auto
-
-.text-center
-	text-align: center
-
-::selection
-	background-color: $accent_coloured
-	color: #fff
-
-
-/*______________ header хедера ______________*/
+//___ header ___
 .header
-	>.flex
-		flex-direction: column
-		justify-content: space-between
 	min-height: 100vh
-	background:
-		image: url(../img/bg_1.jpg)
-		color: $accent_coloured
-		repeat: no-repeat
-		size: cover
+	padding-top: 60px
 	overflow: hidden
+	background-image: url(../img/dist/bg_1.jpg)
+	background-color: $accent-dark
+	background-repeat: no-repeat
+	background-size: cover
 	.container
 		position: static
 	.h1
-		line-height: 1
 		font-size: 75px
 	.h2
 		font-size: 70px
 		font-weight: 600
 	.button
 		margin-top: 20px
-	.flex__menu_logo
-		margin-top: 60px
+	.header__top
+		display: flex
 		justify-content: space-between
-		.logo, .menu
+		a.logo,
+		nav.menu
+			color: $link
 			font-size: 30px
 			font-weight: bold
 			text-transform: uppercase
-			color: $menu_coloured
-		.logo
+		a.logo
 			z-index: 1000
 			transition: all 0.3s ease-in-out
 			&:hover
 				transform: scale(1.15)
-		ul
-			list-style: none
-			padding: 0
-			margin: 0
-		li
-			margin: 
-				right: 20px
-			&:last-child
-				margin: 
-					right: 0px
+		.menu__list
+			display: flex
+			flex-wrap: wrap
+			justify-content: flex-end
+			user-select: none // Меню без выдиления
+		.menu__item
+			margin-left: 10px
+			margin-right: 10px
 			transition: all 0.3s ease-in-out
 			&:hover
 				transform: scale(1.15)
-		a
-			text-decoration: none
-			color: $menu_coloured
-			&:hover
-				color: #fff
+				a:hover
+					color: #fff
+		.menu__link
+			color: $link
+			transition: all 0.3s ease-in-out
 
-		// Mobile MENU
-		.menu__icon // иконка при закрытом меню
-			display: none
+		// Mobile MENU 2part
+		.menu__icon
 			width: 45px
 			height: 35px
+			margin-top: 7px
+			display: none
 			position: relative
 			cursor: pointer
-			margin-top: 7px
 			span
+				width: 100%
+				height: 9px
 				display: block
 				position: absolute
-				height: 9px
-				width: 100%
-				background: $menu_coloured
-				border-radius: 9px
-				opacity: 1
 				left: 0
+				opacity: 1
+				background-color: $link
+				border-radius: 9px
 				transform: rotate(180deg)
+				transition: all .25s ease-in-out
 				transition: .25s ease-in-out
-				&:nth-child(1) 
+				&:nth-child(1)
 					top: 0px
-				&:nth-child(2), &:nth-child(3) 
+				&:nth-child(2), &:nth-child(3)
 					top: 13px
 					background: rgba(255, 255, 255, 0.47)
-				&:nth-child(4) 
+				&:nth-child(4)
 					top: 26px
-		.menu.menu__open // иконка при открытом меню
+		// Mobile MENU 3part
+		nav.menu.menu__open
 			margin-top: 3px
 			margin-right: 13px
+			.menu__list
+				display: block
 			.menu__icon
 				span
 					&:nth-child(1)
 						top: 18px
 						width: 0%
 						left: 50%
-					&:nth-child(2) 
+					&:nth-child(2)
 						transform: rotate(45deg)
-					&:nth-child(3) 
+					&:nth-child(3)
 						transform: rotate(-45deg)
-					&:nth-child(4) 
+					&:nth-child(4)
 						top: 18px
 						width: 0%
 						left: 50%
-			.menu__links
-				display: block
 	// делаю блок с тектом по центру вертикали и горизонтали
-	.header_info
+	.header__center
 		height: 600px
 		position: static
-	.header__center_info
-		position: absolute
-		top: 56.5%
-		left: 50%
-		transform: translate(-50%, -55%)
-		width: 760px
-		background-color: $bg_light
-		text-align: center
-		.text_header
-			margin: 
-				top: 120px
-				bottom: 120px
+		&--wrap
+			width: 760px
+			position: absolute
+			top: 56.5%
+			left: 50%
+			background-color: $accent-light
+			text-align: center
+			transform: translate(-50%, -55%)
+		&--text
+			padding-top: 120px
+			padding-bottom: 120px
+			padding-left: 15px
+			padding-right: 15px
 
-/*______________// header cекция ______________*/
 
 
-/*______________ second cекция ______________*/
-.second
-	.container
-		flex-direction: column
-		min-height: inherit
-	.second__content_block
-		margin:
-			top: 69px
-			bottom: 69px
+//: flavours :
+.flavours
+	padding-top: 69px
+	padding-bottom: 69px
+	.flavours__content
+		width: 100%
 		overflow: hidden
+		display: flex
+		flex-wrap: wrap
 		align-items: center
 		justify-content: space-between
-		.content__text
-			width: 500px
+		&--text
+			width: 46%
 			color: #fff
 			.h_text
+				margin-bottom: 49px
 				display: block
 				font-size: 29px
-				margin-bottom: 49px
-			.text_second
-				text-align: justify
+			.text_flavours
 				font-size: 18px
-		// 3D анимация при наведении или нажатии с телефона на картинку
-		&--animation-img
-			position: relative
-			width: 528px
+				text-align: justify
+		&--img3d
+			width: 46%
 			height: 355px
-			&:hover, &:active
+			position: relative
+			&:hover,
+			&:active
 				transform: scale(0.9) rotate(0deg) skew(0deg)
 				img:nth-child(4)
 					transform: translate(30px, -30px)
@@ -280,524 +162,497 @@ section
 					transform: translate(0px, 0px)
 					opacity: .4
 			img
-				overflow: hidden
-				position: absolute
 				width: 100%
 				height: auto
+				position: absolute
+				top: 0
+				bottom: 0
+				left: 0
+				right: 0
 				transition: all 0.4s ease-in-out
 
-/*______________// second cекция ______________*/
 
 
-/*______________ third cекция ______________*/
-.third
-	background:
-		color: $bg_light
+//: new__info :
+.new__info
+	padding-top: 69px
+	padding-bottom: 69px
+	background-color: $accent-light
 	.container
-		flex-direction: column
-		margin:
-			top: 69px
-			bottom: 69px
 		min-height: inherit
+		display: flex
+		flex-wrap: wrap
+		flex-direction: column
 	// Анимация для circle при наведении или нажатии с телефона на блок
-	.content_text
-		margin: 0 auto
+	&--list
+		display: flex
+		flex-wrap: wrap
+	&--item
 		width: 258px
-		color: $accent_coloured
-		&:hover, &:active
-			.block_circle
-				transform: scale(1.1)
-		.block_circle
-			margin:
-				bottom: 25px
+		margin: 0 auto
+		color: $accent-dark
+		.new__info--circle
+			margin-bottom: 25px
+			display: flex
+			flex-wrap: wrap
 			transition: all 0.3s ease-in-out
-		.h_text2
+		.new__info--title
 			font-size: 19px
-		.text_third
-			text-align: justify
+		.new__info--text
 			font-size: 18px
+			text-align: justify
+		&:hover,
+		&:active
+			.new__info--circle
+				transform: scale(1.1)
 		&:first-child
-			margin:
-				left: 0
+			margin-left: 0
 		&:last-child
-			margin:
-				right: 0
-.circle
-	box-shadow: 1px 2px 6px
-	width: 31px
-	height: 31px
-	background: $accent_coloured
-	border-radius: 50px
-	margin-right: 6px
-	&:last-child
-		margin-right: 0
-
-/*______________// third cекция ______________*/
+			margin-right: 0
 
 
-/*______________ fourth cекция ______________*/
-.fourth
+
+
+//: menu__prices :
+.menu__prices
+	padding-top: 90px
+	padding-bottom: 90px
 	z-index: 100
-	background:
-		image: url(../img/bg_2.jpg)
-		color: $accent_coloured
-		position: center center
-		repeat: no-repeat
-		size: cover
+	background-image: url(../img/dist/bg_2.jpg)
+	background-color: $accent-dark
+	background-position: center center
+	background-repeat: no-repeat
+	background-size: cover
 	.container
 		flex-direction: column
-	.fourth__center_info
-		width: 1080px
+	.menu__prices--wrap
+		max-width: 1080px
+		margin: 0 auto
+		color: $accent-dark
 		text-align: center
-		margin: auto
-			top: 90px
-			bottom: 90px
-		color: $accent_coloured
-		.fourth_h
-			padding: 
-				top: 55px
-				bottom: 55px
-			background-color: $bg_light
-			width: 1080px
-		ul.fourth__bloks_center
-			list-style: none
-			width: 1080px
-			// Анимация при наведении или нажатии с телефона на блок с картинкой + текстом
-			.food_block
-				&:hover, &:active
-					img.img_item, .info
-						transform: scale(1.1)
-			li.flex_item, img.img_item
-				padding: 0
-				margin: 0
-				width: 270px
-				height: 274px
-				background-color: $bg_light
-				overflow: hidden
-				transition: all 0.3s ease-in-out
-			li.flex_item
-				align-items: center
-				.info
-					width: 160px
-					margin: 0 auto
-					transition: all 0.3s ease-in-out
-				.h_text
-					text-transform: uppercase
-					font-size: 18px
-				.text, .price
-					font-size: 16px
+	.menu__prices--title
+		width: 100%
+		padding-top: 55px
+		padding-bottom: 55px
+		background-color: $accent-light
+	.menu__prices--list
+		width: 100%
+		display: flex
+		flex-wrap: wrap
+	.menu__prices--item
+		max-width: 100%
+		display: flex
+		flex-wrap: wrap
+		&:hover,
+		&:active
+			img,
+			.info
+				transform: scale(1.1)
+	.menu__prices--cell
+		width: 270px
+		height: 274px
+		overflow: hidden
+		background-color: $accent-light
+		display: flex
+		flex-direction: column
+		justify-content: center
+		img
+			transition: all 0.3s ease-in-out
+		.info
+			width: 160px
+			min-height: 1px
+			margin: 0 auto
+			transition: all 0.3s ease-in-out
+			.title
+				text-transform: uppercase
+				font-size: 18px
+			.text,
+			.price
+				font-size: 16px
 
-/*______________// fourth cекция ______________*/
 
 
-/*______________ fifth cекция ______________*/
-.fifth
-	background:
-		color: $bg_light
-	.fifth__sprite
+//: traditional__kitchen :
+.traditional__kitchen
+	padding-top: 79px
+	padding-bottom: 69px
+	background-color: $accent-light
+	.traditional__kitchen--sprite
 		div
-			z-index: 5
-			top: 0
-			bottom: 0
-			margin: auto
-			overflow: auto
 			width: 400px
 			height: 429px
+			overflow: auto
+			z-index: 5
 			position: absolute
-			background:
-				image: url(../img/bg_3.0.png)
-				position: 0 0
-				repeat: no-repeat
-				size: cover, cover
-		.fifth_right__sprite
-			right: 0
-			background:
-				position: -1137px -1px
+			top: 0
+			bottom: 0
+			background-image: url(../img/dist/bg_3.0.png)
+			background-position: 0 0
+			background-repeat: no-repeat
+			background-size: cover
+			&.right__bg
+				right: 0
+				background-position: -1137px -1px
 	.container
 		z-index: 55
-	.fifth__center_info
+	.traditional__kitchen--wrap
 		width: 700px
+		margin: 0 auto
+		color: $accent-dark
 		text-align: center
-		margin: auto
-			top: 79px
-			bottom: 69px
-		color: $accent_coloured
+	.traditional__kitchen--title
 		.h3
-			text-transform: none
-			margin: 
-				bottom: 30px
+			margin-bottom: 30px
 			font-size: 29px
-		.fifth__text
-			font-size: 18px
-		.block_circle
-			justify-content: center
-			margin: 
-				top: 50px
-				bottom: 50px
-			// Анимация при наведении или нажатии с телефона на блок с тремя circle
-			transition: all 0.6s ease-in-out
-			&:hover
-				transform: rotate(720deg)
-			&:active
-				transform: rotate(-720deg)
-		.block_menu2
-			justify-content: center
-			margin: 
-				right: auto
-				left: auto
-			.a_menu2
-				margin:
-					right: 60px
-				&:last-child
-					margin:
-						right: 0px
-				a.menu2
-					text-decoration: none
-					color: $accent_coloured
-					&:hover, &:active
-						color: rgba(255, 255, 255, 0.739)
-						font-weight: bold
-
-/*______________// fifth cекция ______________
+			text-transform: none
+	.traditional__kitchen--text
+		font-size: 18px
+	.traditional__kitchen--circle
+		margin-top: 50px
+		margin-bottom: 50px
+		display: flex
+		flex-wrap: wrap
+		justify-content: center
+		transition: all 0.6s ease-in-out
+		&:hover
+			transform: rotate(720deg)
+		&:active
+			transform: rotate(-720deg)
+	.traditional__kitchen--list
+		margin-left: auto
+		margin-right: auto
+		display: flex
+		flex-wrap: wrap
+		justify-content: center
+	.traditional__kitchen--item
+		margin-right: 60px
+		&:last-child
+			margin-right: 0px
+	.traditional__kitchen--link
+		color: $accent-dark
+		&:hover, &:active
+			color: rgba(255, 255, 255, 0.739)
+			font-weight: bold
 
 
-/*______________ sixth cекция ______________*/
-.sixth
+
+//: menu__new :
+.menu__new
+	padding-top: 240px
 	z-index: 100
-	background:
-		image: url(../img/bg_3.2.jpg)
-		color: $accent_coloured
-		position: center center
-		repeat: no-repeat
-		size: cover
-	.background_0
-		background-color: transparent
-		height: 240px
-	.background_light
-		background-color: $bg_light
-		flex-direction: column
-	.sixth_h
+	background-image: url(../img/dist/bg_3.2.jpg)
+	background-color: $accent-dark
+	background-position: center center
+	background-repeat: no-repeat
+	background-size: cover
+	&--background_light
+		padding-top: 45px
+		padding-bottom: 45px
+		background-color: $accent-light
+	.menu__new--title
+		width: 100%
+		margin-bottom: 45px
 		text-align: center
-		margin: auto
-			top: 45px
-			bottom: 45px
-	ul.sixth__bloks
-		color: $accent_coloured
-		list-style: none
-		padding: 0
-		margin: 0
-		width: 1080px
-		.img_background
-			background: #fff
-			border:
-				radius: 100%
+	.menu__new--list
+		width: 100%
+		display: flex
+		flex-wrap: wrap
+		justify-content: space-between
+		color: $accent-dark
+		.menu__new--item
+			max-width: 410px
+			margin-bottom: 55px
+			overflow: hidden
+			display: flex
+			flex-wrap: wrap
+			justify-content: center
+			&:hover,
+			&:active
+				.menu__new--img
+					img
+						transform: scale(1.25)
+			.menu__new--info
+				width: 75%
+				.title
+					text-transform: uppercase
+		.menu__new--img
 			width: 81px
 			height: 81px
-			margin: 
-				right: 10px
-			img.img_item
+			margin-right: 10px
+			display: flex
+			flex-direction: column
+			justify-content: center
+			background-color: $white
+			border-radius: 100%
+			img
 				width: 41px
 				height: 41px
-				margin: auto
+				margin: 0 auto
 				transition: all 0.2s ease-in-out
-		li.flex_item
-			margin: auto
-				left: 0
-				bottom: 55px
-			width: 410px
-			// Анимация увеличения картинки при наведении или нажатии с телефона на блок
-			overflow: hidden
-			&:hover, &:active
-				img.img_item
-					transform: scale(1.5)
-			.content_text
-				width: 319px
-				.h_text
-					text-transform: uppercase
-		li.flex_item2
-			margin: auto
-				right: 0
-				bottom: 55px
-
-/*______________// sixth cекция ______________*/
 
 
-/*______________ seventh cекция ______________*/
-.seventh
-	background:
-		image: url(../img/bg-4.jpg)
-		color: $accent_coloured
-		position: center center
-		repeat: no-repeat
-		size: cover
+
+//: img 1 empty (section) :
+.img__only--1
 	height: 890px
-/*______________// seventh cекция ______________*/
+	background-image: url(../img/dist/bg-4.jpg)
+	background-color: $accent-dark
+	background-position: center center
+	background-repeat: no-repeat
+	background-size: cover
 
 
-/*______________ eighth cекция ______________*/
-.eighth
-	background:
-		color: $accent_coloured
-	.eighth__container, .h1
-		color: #fff
-	.eighth__container
-		margin:
-			top: 51px
-			bottom: 72px
-		.eighth_h
-			text-align: center
-			margin: 
-				bottom: -4px
-		.eighth__form
-			justify-content: center
-			.element
-				width: 240px
-				margin:
-					right: 100px
-					left: 0
-					top: 44px
-					bottom: 0
-			.element2
-				margin:
-					left: auto
-					right: 0
-			.element3
-				margin:
-					left: 7.6%
-					right: 7.6%
-			input, select
-				width: 240px
-				option
-					background-color: $accent_coloured
-			.fields_eighth_execution
-				border-width: 1.5px
-				border-color: #fff
-				border-style: solid
-				border-radius: 8px
-				padding-left: 8px
-				height: 30px
-				font-size: 16.667px
-				font-family: $default-font
-				color: #fff
-				font-weight: bold
-				line-height: 1.2
-				text-align: left
-				background: none
-			::placeholder
-				color: #fff
-			.calendar
-				background: url(../img/calendar.png) no-repeat 96% 50%
-			.time
-				background: url(../img/time.png) no-repeat 96% 50% 
-			.submit
-				margin:
-					top: 55px
-				#submit
-					text-align: center
-					text-transform: uppercase
-					padding-left: 0
-					&::after
-						background-color: darken(#fff, 50%)
-						opacity: .18
-					&:focus, &:hover
-						color: $accent_coloured
-						background-color: darken(#fff, 5%)
-					&:hover
-						background-color: lighten(#fff, 5%)
-						opacity: .9
-					&:active
-						background-color: darken(#fff, 5%)
 
-/*______________// eighth cекция ______________*/
-
-
-/*______________ ninth cекция ______________*/
-.ninth
-	background:
-		image: url(../img/bg-5.jpg)
-		color: $accent_coloured
-		position: center center
-		repeat: no-repeat
-		size: cover
-	height: 865px
-
-/*______________// ninth cекция ______________*/
-
-
-/*______________ tenth cекция ______________*/
-.tenth
-	background:
-		color: $bg_light
-	position: relative
-	.tenth__container
-		margin: auto
-			top: 46px
-			bottom: 124px
-	.tenth_h
+//: form__booking :
+.form__booking
+	padding-top: 50px
+	padding-bottom: 60px
+	color: $white
+	background-color: $accent-dark
+	&--title
+		margin-bottom: -4px
 		text-align: center
-		margin: 
-			right: auto
-			left: auto
-			bottom: 56px
-	// Кнопки перелистывания карусели
-	.prev-next-navigation 
+		.h1
+			color: $white
+	&--form
+		display: flex
+		flex-wrap: wrap
+		justify-content: center
+		input, select, label
+			width: 240px
+			display: block
+		option
+			background-color: $accent-dark
+		.form__booking--list
+			width: 100%
+			display: flex
+			flex-wrap: wrap
+			justify-content: space-around
+		.form__booking--item
+			width: 240px
+			margin-top: 44px
+			display: flex
+			flex-direction: column
+			align-items: center
+			@include media($min-w: 901px, $max-w: null)
+				&:nth-child(3n+2)
+					width: 40%
+					margin-left: auto
+					margin-right: auto
+		.form__booking--input
+			height: 30px
+			padding-left: 8px
+			color: $white
+			background: none
+			font-size: 16.667px
+			font-weight: bold
+			font-family: $font-default
+			line-height: 1.2
+			text-align: left
+			border-width: 1.5px
+			border-style: solid
+			border-color: $white
+			border-radius: 8px
+			&.calendar
+				background: url(../img/dist/calendar.png) no-repeat 96% 50%
+			&.time
+				background: url(../img/dist/time.png) no-repeat 96% 50%
+		#submit
+			margin-top: 55px
+			padding-left: 0
+			text-align: center
+			text-transform: uppercase
+			transition: all 0.2s ease-in-out
+			&::after
+				opacity: .18
+				background-color: darken(#fff, 50%)
+			&:focus, &:hover
+				color: $accent-dark
+				background-color: darken(#fff, 5%)
+			&:hover
+				opacity: .9
+				background-color: lighten(#fff, 5%)
+			&:active
+				background-color: darken(#fff, 5%)
+
+
+
+//: img 2 empty (section) :
+.img__only--2
+	height: 865px
+	background-image: url(../img/dist/bg-5.jpg)
+	background-color: $accent-dark
+	background-position: center center
+	background-repeat: no-repeat
+	background-size: cover
+
+
+
+//: slider__menu :
+.slider__menu
+	padding-top: 60px
+	padding-bottom: 60px
+	position: relative
+	background-color: $accent-light
+	.slider__menu--title
+		margin-bottom: 56px
+		text-align: center
+	.slider__menu--buttons // Кнопки prev-next слайдера
 		li
+			width: 35px
+			height: 38px
+			overflow: hidden
 			z-index: 21
 			position: absolute
 			top: 50%
-			width: 35px
-			height: 38px
 			color: #ad6c12
-			font-size: 40px
-			transition: 0.6s
-			overflow: hidden
-			cursor: pointer
+			font-size: 38px
+			text-align: center
 			line-height: 0
+			cursor: pointer
+			transition: 0.6s
 			&:hover
-				color: rgba(173, 108, 18, 0.739)
 				opacity: 0.9
-		.tenth__prev
-			left: -3.5%
-		.tenth__next
-			right: -3.5%
-	// Карусель
-	.siema__carousel 
-		z-index: 20
-		width: 1119px
-	.tenth__bloks
-		color: rgb(85, 85, 85)
+				color: rgba(173, 108, 18, 0.739)
+			&.slider__menu--prev
+				left: -3.5%
+			&.slider__menu--next
+				right: -3.5%
+	.slider__menu--wrap
 		overflow: hidden
-		li.flex_item
-			width: 339px
-			list-style: none
-			background:
-				color: #fff
-			// Анимация увеличения картинки при наведении или нажатии с телефона
-			overflow: hidden
-			&:hover
-				img.img_item, .read_more_otstyp
-					transform: scale(1.05)
-			img.img_item
-				height: 301px
-				margin: 0
-				padding: 0
-				transition: all 0.3s ease-in-out
-			.block_text
-				width: 283px
-				margin:
-					right: 28px
-					left: 28px
-					top: 25px
-					bottom: 38px
-				.h1_text
-					padding-bottom: 27px
-					font-weight: bold
-				.h2_text
+		color: rgb(85, 85, 85)
+	.siema__carousel--list // Слайдер
+		width: 1119px
+		z-index: 20
+	.siema__carousel--item
+		width: 339px
+		overflow: hidden
+		display: flex
+		flex-wrap: wrap
+		background-color: $white
+		&:hover
+			.posters .posters__link--wrap,
+			img
+				transform: scale(1.05)
+		img
+			height: 301px
+			margin: 0
+			padding: 0
+			transition: all 0.3s ease-in-out
+		.posters
+			width: 283px
+			margin-top: 25px
+			margin-bottom: 38px
+			margin-left: 28px
+			margin-right: 28px
+			.posters__title
+				padding-bottom: 27px
+				font-weight: bold
+			.posters__info
+				.posters__info--title
 					padding-bottom: 7px
 					font-weight: bold
-			.read_more_otstyp
+			.posters__link--wrap
 				padding-top: 28px
 				transition: all 0.3s ease-in-out
-			a.read_more
-				text-transform: uppercase
-				text-decoration: none
+			.posters__link
+				padding-bottom: 5px
 				color: rgb(85, 85, 85)
 				font-size: 14px
 				font-weight: bold
-				padding-bottom: 5px
+				text-transform: uppercase
 				border-bottom: 7px solid rgb(255, 153, 43)
+				transition: all 0.2s ease-in-out
 				&:hover
 					border-bottom: 7px solid rgba(255, 153, 43, 0.5)
 
-/*______________// tenth cекция ______________*/
 
 
-/*______________ eleventh cекция ______________*/
-.eleventh
-	background:
-		color: $accent_coloured
-	.eleventh__center_info
-		margin: auto
-			top: 48px
-			bottom: 48px
-		color: #fff
-		text-align: center
+//: socials :
+.socials
+	padding-top: 48px
+	padding-bottom: 48px
+	background-color: $accent-dark
+	.socials__content
 		width: 697px
-		.eleventh_h
+		margin: 0 auto
+		color: $white
+		text-align: center
+		&--title
 			font-size: 83px
 			line-height: 1
-		.text
+		&--text
 			font-size: 18.75px
-		.h3_text
-			font-size: 18.75px
-			font-weight: bold
+		&--author
 			margin-top: 32px
-		.eleventh__icons_social
-			margin: auto
-				top: 43px
-			justify-content: center
-			a.fa_bg
-				align-items: center
-				background: #fff
-				border:
-					radius: 100%
-				width: 46px
-				height: 46px
-				margin: 
-					right: 26px
-				&:last-child
-					margin: 
-						right: 0
-				text-decoration: none
-				.fa
-					color: $accent_coloured
-					margin: 0 auto
-					font-size: 25px
-				&:hover
-					background-color: rgba(255, 255, 255, .6)
-
-/*______________// eleventh cекция ______________*/
-
-
-/*______________ footer cекция ______________*/
-.footer
-	background:
-		color: $bg_light
-	color: rgb(45, 47, 42)
-	.footer_container
-		justify-content: space-between
-		margin: 
-			top: 73px
-			bottom: 109px
-	.left_content
-		width: 344px
-		.columm
 			font-size: 18.75px
-			.h2
-				font-size: 25px
-				color: rgb(45, 47, 42)
-				margin-bottom: 51px
-				font-weight: bold
-			.text
-				text-align: justify
-				font-size: 18.75px
-	.right_content
-		text-align: center
-		.columm2
-			width: 187px
 			font-weight: bold
-			.h2
-				font-size: 21px
-				color: rgb(45, 47, 42)
+		&--links
+			margin-top: 43px
+			display: flex
+			flex-wrap: wrap
+			justify-content: center
+		&--link
+			width: 46px
+			height: 46px
+			margin-right: 26px
+			display: flex
+			flex-direction: column
+			justify-content: center
+			background-color: $white
+			border-radius: 50%
+			&:last-child
+				margin-right: 0
+			&:hover
+				background-color: rgba(255, 255, 255, .6)
+			i.fa
+				margin: 0 auto
+				color: $accent-dark
+				font-size: 25px
+
+
+
+//___ footer ___
+.footer
+	padding-top: 60px
+	padding-bottom: 60px
+	color: rgb(45, 47, 42)
+	background-color: $accent-light
+	.footer__content
+		display: flex
+		flex-wrap: wrap
+		justify-content: space-between
+		&--info
+			width: 344px
+			font-size: 18.75px
+		&--title
+			margin-bottom: 51px
+			color: rgb(45, 47, 42)
+			font-size: 25px
+			font-weight: bold
+		&--text
+			text-align: justify
+			font-size: 18.75px
+		&--list
+			display: flex
+			flex-wrap: wrap
+			justify-content: center
+			text-align: center
+			.footer__content--item
+				min-width: 187px
+				font-weight: bold
+				&:last-child
+					font-weight: normal
+			.footer__content--title
 				margin-bottom: 51px
-			a.info
-				text-decoration: none
+				color: rgb(45, 47, 42)
+				font-size: 21px
+			.footer__content--link
+				display: block
 				color: rgb(45, 47, 42)
 				&:hover, &:active
 					color: rgba(255, 255, 255, 0.739)
-			&:last-child
-				font-weight: normal
 
-/*______________ // footer cекция ______________*/
 
-@import "media"
+
+@import "_media"
