@@ -1,5 +1,5 @@
 //___ config ___
-//* Vars, Fonts, Imports Library, default 1 CSS */
+//* Vars, FONTS mixin, media mixin, default 1 CSS */
 @import "_config"
 
 
@@ -14,15 +14,22 @@
 	background-color: $accent-dark
 	background-repeat: no-repeat
 	background-size: cover
+	@include media($min-w: 0px, $max-w: 800px)
+		padding-top: 30px
 	.container
 		position: static
 	.h1
-		font-size: 75px
+		@include media($min-w: 0px, $max-w: 615px)
+			font-size: 60px
 	.h2
 		font-size: 70px
 		font-weight: 600
+		@include media($min-w: 0px, $max-w: 615px)
+			font-size: 36px
 	.button
 		margin-top: 20px
+		@include media($min-w: 0px, $max-w: 615px)
+			font-size: 25px
 	.header__top
 		display: flex
 		justify-content: space-between
@@ -42,6 +49,22 @@
 			flex-wrap: wrap
 			justify-content: flex-end
 			user-select: none // Меню без выдиления
+			// Mobile MENU 1part
+			@include media($min-w: 0px, $max-w: 800px)
+				width: 100%
+				min-height: 100vh
+				padding-top: 105px
+				display: none
+				overflow-y: scroll
+				overflow-x: hidden
+				z-index: 998
+				position: fixed
+				background-color: rgba(42, 59, 64, 1)
+				top: 0
+				bottom: 0
+				left: 0
+				right: 0
+				text-align: center
 		.menu__item
 			margin-left: 10px
 			margin-right: 10px
@@ -49,11 +72,18 @@
 			&:hover
 				transform: scale(1.15)
 				a:hover
-					color: #fff
+					color: $white
+			@include media($min-w: 0px, $max-w: 800px)
+				margin: 0
+				border-top: 4px solid rgba(255, 255, 255, 0.42)
+				&:last-child
+					border-bottom: 4px solid rgba(255, 255, 255, 0.42)
 		.menu__link
 			color: $link
 			transition: all 0.3s ease-in-out
-
+			@include media($min-w: 0px, $max-w: 800px)
+				padding-left: 25%
+				padding-right: 25%
 		// Mobile MENU 2part
 		.menu__icon
 			width: 45px
@@ -62,6 +92,9 @@
 			display: none
 			position: relative
 			cursor: pointer
+			@include media($min-w: 0px, $max-w: 800px)
+				display: block
+				z-index: 999
 			span
 				width: 100%
 				height: 9px
@@ -73,12 +106,11 @@
 				border-radius: 9px
 				transform: rotate(180deg)
 				transition: all .25s ease-in-out
-				transition: .25s ease-in-out
 				&:nth-child(1)
 					top: 0px
-				&:nth-child(2), &:nth-child(3)
+				&:nth-child(2),
+				&:nth-child(3)
 					top: 13px
-					background: rgba(255, 255, 255, 0.47)
 				&:nth-child(4)
 					top: 26px
 		// Mobile MENU 3part
@@ -90,21 +122,24 @@
 			.menu__icon
 				span
 					&:nth-child(1)
-						top: 18px
 						width: 0%
+						top: 18px
 						left: 50%
 					&:nth-child(2)
 						transform: rotate(45deg)
 					&:nth-child(3)
 						transform: rotate(-45deg)
 					&:nth-child(4)
-						top: 18px
 						width: 0%
+						top: 18px
 						left: 50%
+
 	// делаю блок с тектом по центру вертикали и горизонтали
 	.header__center
 		height: 600px
 		position: static
+		@include media($min-w: 0px, $max-w: 800px)
+			height: 390px
 		&--wrap
 			width: 760px
 			position: absolute
@@ -113,11 +148,20 @@
 			background-color: $accent-light
 			text-align: center
 			transform: translate(-50%, -55%)
+			@include media($min-w: 0px, $max-w: 1100px)
+				max-width: 90%
 		&--text
 			padding-top: 120px
 			padding-bottom: 120px
 			padding-left: 15px
 			padding-right: 15px
+			@include media($min-w: 800px, $max-w: 1100px)
+				padding-top: 60px
+				padding-bottom: 60px
+			@include media($min-w: 0px, $max-w: 800px)
+				padding-top: 30px
+				padding-bottom: 30px
+
 
 
 
@@ -125,6 +169,9 @@
 .flavours
 	padding-top: 69px
 	padding-bottom: 69px
+	@include media($min-w: 0px, $max-w: 615px)
+		padding-top: 40px
+		padding-bottom: 50px
 	.flavours__content
 		width: 100%
 		overflow: hidden
@@ -132,35 +179,56 @@
 		flex-wrap: wrap
 		align-items: center
 		justify-content: space-between
+		@include media($min-w: 0px, $max-w: 800px)
+			justify-content: space-around
 		&--text
 			width: 46%
-			color: #fff
+			color: $white
 			.h_text
 				margin-bottom: 49px
 				display: block
 				font-size: 29px
+				@include media($min-w: 0px, $max-w: 800px)
+					margin-bottom: 30px
 			.text_flavours
 				font-size: 18px
 				text-align: justify
+			@include media($min-w: 800px, $max-w: 1100px)
+				width: 54%
+				padding-right: 20px
+			@include media($min-w: 0px, $max-w: 800px)
+				width: 80%
+				margin-bottom: 40px
+			@include media($min-w: 0px, $max-w: 615px)
+				width: 100%
 		&--img3d
 			width: 46%
 			height: 355px
 			position: relative
+			@include media($min-w: 800px, $max-w: 1100px)
+				width: 40vw
+				height: 25vw
+			@include media($min-w: 0px, $max-w: 800px)
+				width: 70vw
+				height: 45vw
+			@include media($min-w: 0px, $max-w: 615px)
+				width: 90vw
+				height: 60vw
 			&:hover,
 			&:active
 				transform: scale(0.9) rotate(0deg) skew(0deg)
 				img:nth-child(4)
-					transform: translate(30px, -30px)
 					opacity: 1
+					transform: translate(30px, -30px)
 				img:nth-child(3)
-					transform: translate(20px, -20px)
 					opacity: .8
+					transform: translate(20px, -20px)
 				img:nth-child(2)
-					transform: translate(10px, -10px)
 					opacity: .6
+					transform: translate(10px, -10px)
 				img:nth-child(1)
-					transform: translate(0px, 0px)
 					opacity: .4
+					transform: translate(0px, 0px)
 			img
 				width: 100%
 				height: auto
@@ -172,12 +240,14 @@
 				transition: all 0.4s ease-in-out
 
 
-
 //: new__info :
 .new__info
 	padding-top: 69px
 	padding-bottom: 69px
 	background-color: $accent-light
+	@include media($min-w: 0px, $max-w: 615px)
+		padding-top: 40px
+		padding-bottom: 40px
 	.container
 		min-height: inherit
 		display: flex
@@ -191,6 +261,8 @@
 		width: 258px
 		margin: 0 auto
 		color: $accent-dark
+		@include media($min-w: 0px, $max-w: 1100px)
+			width: 30%
 		.new__info--circle
 			margin-bottom: 25px
 			display: flex
@@ -198,9 +270,13 @@
 			transition: all 0.3s ease-in-out
 		.new__info--title
 			font-size: 19px
+			@include media($min-w: 0px, $max-w: 615px)
+				font-size: 15px
 		.new__info--text
 			font-size: 18px
 			text-align: justify
+			@include media($min-w: 0px, $max-w: 615px)
+				font-size: 14px
 		&:hover,
 		&:active
 			.new__info--circle
@@ -209,6 +285,7 @@
 			margin-left: 0
 		&:last-child
 			margin-right: 0
+
 
 
 
@@ -223,6 +300,9 @@
 	background-position: center center
 	background-repeat: no-repeat
 	background-size: cover
+	@include media($min-w: 0px, $max-w: 615px)
+		padding-top: 50px
+		padding-bottom: 40px
 	.container
 		flex-direction: column
 	.menu__prices--wrap
@@ -230,6 +310,12 @@
 		margin: 0 auto
 		color: $accent-dark
 		text-align: center
+		@include media($min-w: 616px, $max-w: 1100px)
+			max-width: 540px
+			margin-right: auto
+			margin-left: auto
+		@include media($min-w: 0px, $max-w: 615px)
+			max-width: 270px
 	.menu__prices--title
 		width: 100%
 		padding-top: 55px
@@ -239,6 +325,8 @@
 		width: 100%
 		display: flex
 		flex-wrap: wrap
+		@include media($min-w: 0px, $max-w: 615px)
+			margin-top: 20px
 	.menu__prices--item
 		max-width: 100%
 		display: flex
@@ -248,6 +336,18 @@
 			img,
 			.info
 				transform: scale(1.1)
+		@include media($min-w: 1101px, $max-w: null)
+			// применить к: 3, 7, 11, 14 до ∞
+			&:nth-child(4n+3)
+				flex-direction: row-reverse
+			// применить к: 4, 8, 12, 15 до ∞
+			&:nth-child(4n+4)
+				flex-direction: row-reverse
+		@include media($min-w: 616px, $max-w: 1100px)
+			&:nth-child(2n)
+				flex-direction: row-reverse
+		@include media($min-w: 0px, $max-w: 615px)
+			margin-bottom: 20px
 	.menu__prices--cell
 		width: 270px
 		height: 274px
@@ -264,8 +364,8 @@
 			margin: 0 auto
 			transition: all 0.3s ease-in-out
 			.title
-				text-transform: uppercase
 				font-size: 18px
+				text-transform: uppercase
 			.text,
 			.price
 				font-size: 16px
@@ -277,6 +377,9 @@
 	padding-top: 79px
 	padding-bottom: 69px
 	background-color: $accent-light
+	@include media($min-w: 0px, $max-w: 615px)
+		padding-top: 60px
+		padding-bottom: 60px
 	.traditional__kitchen--sprite
 		div
 			width: 400px
@@ -290,9 +393,29 @@
 			background-position: 0 0
 			background-repeat: no-repeat
 			background-size: cover
+			@include media($min-w: 800px, $max-w: 1100px)
+				height: 460px
+				background-position: -90px 0
+			@include media($min-w: 0px, $max-w: 800px)
+				height: 510px
+				background-position: -138px 0px
+			@include media($min-w: 0px, $max-w: 668px)
+				width: 200px
+				height: 530px
+				background-position: -193px 0px
+			@include media($min-w: 0px, $max-w: 375px)
+				background-position: -264px 0px
 			&.right__bg
 				right: 0
 				background-position: -1137px -1px
+				@include media($min-w: 800px, $max-w: 1100px)
+					background-position: -1162px -1px
+				@include media($min-w: 0px, $max-w: 800px)
+					background-position: -1293px -1px
+				@include media($min-w: 0px, $max-w: 668px)
+					background-position: -1510px -1px
+				@include media($min-w: 0px, $max-w: 375px)
+					background-position: -1438px -1px
 	.container
 		z-index: 55
 	.traditional__kitchen--wrap
@@ -300,6 +423,8 @@
 		margin: 0 auto
 		color: $accent-dark
 		text-align: center
+		@include media($min-w: 0px, $max-w: 1100px)
+			width: 70%
 	.traditional__kitchen--title
 		.h3
 			margin-bottom: 30px
@@ -324,15 +449,23 @@
 		display: flex
 		flex-wrap: wrap
 		justify-content: center
+		@include media($min-w: 0px, $max-w: 800px)
+			width: 70%
 	.traditional__kitchen--item
 		margin-right: 60px
 		&:last-child
 			margin-right: 0px
+		@include media($min-w: 0px, $max-w: 800px)
+			margin-right: 10px
+			&:last-child
+				margin-right: 10px
 	.traditional__kitchen--link
 		color: $accent-dark
 		&:hover, &:active
 			color: rgba(255, 255, 255, 0.739)
 			font-weight: bold
+		@include media($min-w: 0px, $max-w: 800px)
+			width: 25%
 
 
 
@@ -359,6 +492,8 @@
 		flex-wrap: wrap
 		justify-content: space-between
 		color: $accent-dark
+		@include media($min-w: 0px, $max-w: 1100px)
+			justify-content: space-around
 		.menu__new--item
 			max-width: 410px
 			margin-bottom: 55px
@@ -375,6 +510,8 @@
 				width: 75%
 				.title
 					text-transform: uppercase
+			@include media($min-w: 0px, $max-w: 1100px)
+				margin-bottom: 30px
 		.menu__new--img
 			width: 81px
 			height: 81px
@@ -384,11 +521,18 @@
 			justify-content: center
 			background-color: $white
 			border-radius: 100%
+			@include media($min-w: 0px, $max-w: 800px)
+				width: 51px
+				height: 51px
+				margin-top: 5px
 			img
 				width: 41px
 				height: 41px
 				margin: 0 auto
 				transition: all 0.2s ease-in-out
+				@include media($min-w: 0px, $max-w: 800px)
+					width: 25px
+					height: 25px
 
 
 
@@ -465,15 +609,15 @@
 			transition: all 0.2s ease-in-out
 			&::after
 				opacity: .18
-				background-color: darken(#fff, 50%)
+				background-color: darken($white, 50%)
 			&:focus, &:hover
 				color: $accent-dark
-				background-color: darken(#fff, 5%)
+				background-color: darken($white, 5%)
 			&:hover
 				opacity: .9
-				background-color: lighten(#fff, 5%)
+				background-color: lighten($white, 5%)
 			&:active
-				background-color: darken(#fff, 5%)
+				background-color: darken($white, 5%)
 
 
 
@@ -518,18 +662,45 @@
 				left: -3.5%
 			&.slider__menu--next
 				right: -3.5%
+		@include media($min-w: 0px, $max-w: 1182px)
+			li
+				width: 50px
+				height: 53px
+				padding: 9px 0px
+				top: 49%
+				background-color: rgba(42, 59, 64, 0.869)
+				border-radius: 30%
+				&.slider__menu--prev
+					left: 2%
+				&.slider__menu--next
+					right: 2%
+		@include media($min-w: 0px, $max-w: 800px)
+			li
+				top: 50%
+				&.slider__menu--prev
+					left: 7%
+				&.slider__menu--next
+					right: 7%
 	.slider__menu--wrap
 		overflow: hidden
 		color: rgb(85, 85, 85)
 	.siema__carousel--list // Слайдер
 		width: 1119px
 		z-index: 20
+		@include media($min-w: 0px, $max-w: 1182px)
+			width: 100%
 	.siema__carousel--item
 		width: 339px
 		overflow: hidden
 		display: flex
 		flex-wrap: wrap
 		background-color: $white
+		@include media($min-w: 0px, $max-w: 1182px)
+			margin: 0 auto
+		@include media($min-w: 0px, $max-w: 615px)
+			width: 300px
+		@include media($min-w: 0px, $max-w: 375px)
+			width: 282px
 		&:hover
 			.posters .posters__link--wrap,
 			img
@@ -539,6 +710,12 @@
 			margin: 0
 			padding: 0
 			transition: all 0.3s ease-in-out
+			@include media($min-w: 0px, $max-w: 615px)
+				width: 100%
+				height: 266px
+			@include media($min-w: 0px, $max-w: 375px)
+				width: 100%
+				height: 252px
 		.posters
 			width: 283px
 			margin-top: 25px
@@ -578,6 +755,8 @@
 		margin: 0 auto
 		color: $white
 		text-align: center
+		@include media($min-w: 0px, $max-w: 1100px)
+			width: 90%
 		&--title
 			font-size: 83px
 			line-height: 1
@@ -609,6 +788,12 @@
 				margin: 0 auto
 				color: $accent-dark
 				font-size: 25px
+			@include media($min-w: 0px, $max-w: 615px)
+				width: 36px
+				height: 36px
+				margin-right: 16px
+				.fa
+					font-size: 20px
 
 
 
@@ -618,13 +803,22 @@
 	padding-bottom: 60px
 	color: rgb(45, 47, 42)
 	background-color: $accent-light
+	@include media($min-w: 0px, $max-w: 615px)
+		padding-bottom: 0px
 	.footer__content
 		display: flex
 		flex-wrap: wrap
 		justify-content: space-between
+		@include media($min-w: 0px, $max-w: 1100px)
+			justify-content: center
 		&--info
 			width: 344px
 			font-size: 18.75px
+			@include media($min-w: 0px, $max-w: 1100px)
+				width: 45%
+				padding-bottom: 50px
+			@include media($min-w: 0px, $max-w: 800px)
+				width: 70%
 		&--title
 			margin-bottom: 51px
 			color: rgb(45, 47, 42)
@@ -643,6 +837,11 @@
 				font-weight: bold
 				&:last-child
 					font-weight: normal
+				@include media($min-w: 0px, $max-w: 800px)
+					min-width: 150px
+				@include media($min-w: 0px, $max-w: 615px)
+					min-width: 100px
+					margin-bottom: 40px
 			.footer__content--title
 				margin-bottom: 51px
 				color: rgb(45, 47, 42)
@@ -653,6 +852,3 @@
 				&:hover, &:active
 					color: rgba(255, 255, 255, 0.739)
 
-
-
-@import "_media"
