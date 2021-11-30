@@ -1,2 +1,9 @@
-# Игнорирование каталога .vscode c файлами ".json"
-*/.vscode
+# Игнорирование по всюду каталогов/файлов:
+
+/**/.vscode/
+/**/*.cmd
+/**/.git/
+/**/Thumbs.db
+/**/node_modules/
+/**/debug.log
+/**/*.DS_Store
