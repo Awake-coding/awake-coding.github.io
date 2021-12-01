@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+	<!-- * title * -->
+	<title>Fish-Landing</title>
+	<!--___ Запрет на индексацию поисковиками гугл и яндекс ___-->
+	<meta name="robots" content="noindex, nofollow">
+	<!-- в description пишут-описание страницы -->
+	<meta name="description" content="квокер, приманка">
+	<!-- keywords - Список ключевых слов, встречающихся на странице -->
+	<meta name="keywords" content="квокер, приманка">
+	<!-- favicon -->
+	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+	<!-- color on mobile -->
+	<meta name="theme-color" content="#3d2617"><!-- Chrome, Firefox OS and Opera -->
+	<meta name="msapplication-navbutton-color" content="#3d2617"><!-- Windows Phone -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="#3d2617"><!-- iOS Safari -->
+	<!-- * CSS * -->
+	<link rel="stylesheet" type="text/css" href="css/libs.min.css">
+	<link rel="stylesheet" type="text/css" href="css/main.min.css">
+</head>
+
+<body>
+	<!--___ header ___-->
+	<header class="header" id="header">
+		<div class="container">
+
+			<!--: header__top :-->
+			<div class="header__top">
+
+				<!-- Logo -->
+				<div class="header__top--logo">
+					<a class="logo" translate="no" href="index.html">Fish<span> Landing</span></a>
+				</div>
+
+				<!-- Menu -->
+				<nav class="menu">
+
+					<!-- list -->
+					<ul class="menu__list">
+
+						<li class="menu__item">
+							<a class="menu__link scrollto" href="#order-info">
+								Как заказать
+							</a>
+						</li>
+					</ul>
+				</nav>
+
+			</div>
+
+			<!--: header__center :-->
+			<div class="header__center">
+				<div class="header__center--wrap">
+
+					<!--* Характеристики 👇 *-->
+					<div class="header__center--properties animated wobble">
+
+						<h1 class="h1">Квокер</h1>
+
+						<!-- list -->
+						<ul class="header__center--list">
+
+							<li class="header__center--item">
+								<div class="circle"></div>
+								<div class="item__text">
+									Жесткая рыболовная приманка
+								</div>
+							</li>
+
+							<li class="header__center--item">
+								<div class="circle"></div>
+								<div class="item__text">
+									С 2-мя крючками тройниками
+								</div>
+							</li>
+
+							<li class="header__center--item">
+								<div class="circle"></div>
+								<div class="item__text">
+									Размером: 10 см
+								</div>
+							</li>
+
+							<li class="header__center--item">
+								<div class="circle"></div>
+								<div class="item__text">
+									Весом: 13,2 грамма
+								</div>
+							</li>
+
+							<li class="header__center--item">
+								<div class="circle"></div>
+								<div class="item__text">
+									Для верховодной глубины погружения
+								</div>
+							</li>
+
+							<li class="header__center--item__img">
+								<img src="img/dist/mb____6.png" alt="Квокеры">
+							</li>
+						</ul>
+					</div>
+					<!--* Характеристики 👆 *-->
+
+					<!--* form order 👇 *-->
+					<div class="header__center--form" id="header__center--form">
+						<div class="form__title">
+							<h3 class="h3">Заказывайте квокер</h3>
+							<div class="form__title--price">
+								Всего за <span class="price">300 грн</span> 170грн
+							</div>
+						</div>
+
+						<form class="form__order" id="form__order" name="form__order" role="form" action="" method="POST" autocomplete="off" enctype="multipart/form-data">
+
+							<ul class="form__order--list">
+
+								<li class="form__order--item">
+									<input class="form__order--input" type="text" name="name__1" title="Введите свое имя" placeholder="Ваше имя*" required>
+								</li>
+
+								<li class="form__order--item">
+									<input class="form__order--input" type="text" name="name__2" title="Введите свою фамилию" placeholder="Ваша фамилия*" required>
+								</li>
+
+								<li class="form__order--item">
+									<input class="form__order--input" type="tel" name="phone" title="Введите свой телефон" placeholder="Ваш телефон* +380..." minlength="13" maxlength="13" required>
+								</li>
+
+								<li class="form__order--item">
+									<label class="form__order--select__label" for="form__order--select">
+										Выберете количество*:
+									</label>
+									<select class="form__order--input form__order--select" id="form__order--select" name="select_quantity" title="Выберете количество квокеров">
+										<option value="1 шт - 170 грн">1 шт - 170 грн</option>
+										<option value="2 шт - 330 грн">2 шт - 330 грн</option>
+										<option value="3 шт - 469 грн ">3 шт - 469 грн</option>
+										<option value="Набор из 5-ти - 790 + подарок">Набор из 5-ти - 790 + подарок</option>
+									</select>
+								</li>
+							</ul>
+
+							<input type="hidden" name="theme" value="Заказ">
+
+							<!-- button -->
+							<div class="form__order--submit__massage">
+								<!-- massage -->
+								<div class="form__order--massage"></div>
+								<!-- button -->
+								<button class="form__order--submit button" type="submit">Заказать</button>
+							</div>
+						</form>
+					</div>
+					<!--* form order 👆 *-->
+
+				</div>
+			</div>
+
+		</div>
+	</header>
+
+
+
+	<!--___ main ___-->
+	<main class="main">
+
+		<!-- : info section : -->
+		<section class="info" id="info">
+			<div class="container">
+
+				<div class="info__content">
+					<!-- title -->
+					<h3 class="h3">Благодаря звуку, воблер привлекает даже самого пассивного хищника.</h3>
+
+					<ul class="info__content--list">
+
+						<li class="info__content--item">
+							<div class="circle"></div>
+							<div class="item__text">
+								Воблеры отлиты в форму с идеальным размером хвоста и углом, чтобы создать звук, который заманивает рыбу к вам на крючок.
+							</div>
+						</li>
+
+						<li class="info__content--item">
+							<div class="circle"></div>
+							<div class="item__text">
+								Звуковые эксперименты показали, что даже при постоянных скоростях хвост выбивает звуки, которые различаются по высоте октавы по сравнению с более монотонными металлическими хвостами.
+							</div>
+						</li>
+
+						<li class="info__content--item">
+							<div class="circle"></div>
+							<div class="item__text">
+								Причина, по которой эта приманка, несомненно, является привлекательной плавающей рыбой, заключается в проявлении низкочастотных волн.
+							</div>
+						</li>
+					</ul>
+
+					<!-- Gif -->
+					<div class="info__content--gif">
+						<img src="img/dist/Fish_info5.gif" alt="Fish" title="Fish">
+					</div>
+				</div>
+
+			</div>
+		</section>
+
+
+
+
+		<!-- : video : -->
+		<section class="video" id="video">
+			<div class="container">
+
+				<div class="video__content">
+					<ul class="video__content--list">
+
+						<li class="video__content--item">
+							<iframe src="https://www.youtube.com/embed/9Oqji0xHGGE" frameborder="0" allowfullscreen></iframe>
+						</li>
+
+						<li class="video__content--item">
+							<iframe src="https://www.youtube.com/embed/G_OfOHEBEvw" frameborder="0" allowfullscreen ></iframe>
+						</li>
+					</ul>
+				</div>
+
+			</div>
+		</section>
+
+
+
+
+		<!-- : facts : -->
+		<section class="facts" id="facts">
+			<div class="container">
+				<div class="facts__content">
+					<!-- title -->
+					<h2 class="h2">Факты</h2>
+
+					<ul class="facts__content--list">
+
+						<li class="facts__content--item">
+							<div class="facts__content--cell">
+								<div class="facts__content--text">
+									<h3 class="h3">ШИРОКИЙ ДИАПАЗОН СКОРОСТЕЙ</h3>
+									<p class="p">
+										При очень медленной проводке основной акцент будет на работе шумовых шариков. Очень быстрая проводка продемонстрирует сумасшедшую игру - брызги, шлепки, хлюпанье.
+									</p>
+								</div>
+							</div>
+							<div class="facts__content--cell">
+								<div class="facts__content--img">
+									<img src="img/dist/Fish_info1.jpg" alt="Tikka chicken" title="Tikka chicken">
+								</div>
+							</div>
+						</li>
+
+						<li class="facts__content--item">
+							<div class="facts__content--cell">
+								<div class="facts__content--text">
+									<h3 class="h3">ЭФФЕКТИВНОСТЬ</h3>
+									<p class="p">
+										Хвост, вращающийся вокруг своей оси обеспечивает— обильные брызги и звуки которые сводят рыбу с ума.
+									</p>
+								</div>
+							</div>
+							<div class="facts__content--cell">
+								<div class="facts__content--img">
+									<img src="img/dist/Fish_info2.gif" alt="Gif Квокер передвижения" title="Gif Квокер передвижения" class="item__img ">
+								</div>
+							</div>
+						</li>
+
+						<li class="facts__content--item">
+							<div class="facts__content--cell">
+								<div class="facts__content--img">
+									<img src="img/dist/Fish_info3.jpg" alt="chicken CURRY" title="chicken CURRY">
+								</div>
+							</div>
+							<div class="facts__content--cell">
+								<div class="facts__content--text">
+									<h3 class="h3">ОСТРЫЕ КРЮЧКИ</h3>
+									<p class="p">
+										Оснащен 2 комплектами острых тройных крючков. Эти крючки покрыты антиоксидантами для сохранения остроты и блеска.
+									</p>
+								</div>
+							</div>
+						</li>
+
+						<li class="facts__content--item">
+							<div class="facts__content--cell">
+								<div class="facts__content--img">
+									<img src="img/dist/Fish_info4.jpg" alt="RED CURRY" title="RED CURRY">
+								</div>
+							</div>
+							<div class="facts__content--cell">
+								<div class="facts__content--text">
+									<h3 class="h3">КАЧЕСТВЕННЫЙ МАТЕРИАЛ</h3>
+									<p class="p">
+										Изготовлен из высокопрочного синтетического материала, способного противостоять любым условиям окружающей среды.
+									</p>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<!--  -->
+			</div>
+		</section>
+
+
+
+
+		<!-- : products : -->
+		<section class="products" id="products">
+			<div class="container">
+
+				<div class="products__content">
+
+					<div class="products__content--title">
+						<h2 class="h2">Цвета</h2>
+						<h3 class="h3">Сейчас в наличии:</h3>
+					</div>
+
+					<ul class="products__content--list">
+
+						<li class="products__content--item">
+							<img src="img/dist/mb____2.jpg" alt="Жёлтый Квокер" title="Жёлтый Квокер">
+							<div class="products__content--item__title">
+								<h4 class="h4">Жёлтый</h4>
+							</div>
+						</li>
+
+						<li class="products__content--item">
+							<img src="img/dist/mb____3.jpg" alt="Серый Квокер" title="Серый Квокер">
+							<div class="products__content--item__title">
+								<h4 class="h4">Серый</h4>
+							</div>
+						</li>
+
+						<li class="products__content--item">
+							<img src="img/dist/mb____4.jpg" alt="Зеленый Квокер" title="Зеленый Квокер">
+							<div class="products__content--item__title">
+								<h4 class="h4">Зеленый</h4>
+							</div>
+						</li>
+					</ul>
+					<!-- Акция text -->
+					<div class="products__content--share">
+						<span class="share__color">АКЦИЯ!</span> При покупке набора из 5-ти воблеров + подарок
+					</div>
+					<!-- button buy -->
+					<div class="products__content--button">
+						<a class="button scrollto" href="#header__center--form">Купить</a>
+					</div>
+				</div>
+
+			</div>
+		</section>
+
+
+
+
+		<!-- : order-info : -->
+		<section class="order-info" id="order-info">
+			<div class="container">
+
+				<div class="order-info__content">
+
+					<h2 class="h2">Как заказать</h2>
+
+					<ul class="order-info__content--list">
+
+						<li class="order-info__content--item">
+							<div class="order-info__content--text right">
+								<h4 class="h4">Заявка</h4>
+								<div class="text__item">Оставьте заявку на нашем сайте</div>
+							</div>
+
+							<div class="decoration">
+								<div class="line"></div>
+								<div class="circle-1 circle">
+									<div class="number">1</div>
+								</div>
+							</div>
+						</li>
+
+						<li class="order-info__content--item">
+							<div class="order-info__content--text left">
+								<h4 class="h4">Звонок</h4>
+								<div class="text__item">Представитель компании свяжется с вами для уточнения деталей заказа</div>
+							</div>
+
+							<div class="decoration">
+								<div class="line"></div>
+								<div class="circle-2 circle">
+									<div class="number">2</div>
+								</div>
+							</div>
+						</li>
+
+						<li class="order-info__content--item">
+							<div class="order-info__content--text right">
+								<h4 class="h4">Доставка</h4>
+								<div class="text__item">Доставляем ваш заказ Новой Почтой в течении 1-3 дней по всей Украине.</div>
+							</div>
+
+							<div class="decoration">
+								<div class="line"></div>
+								<div class="circle-3 circle">
+									<div class="number">3</div>
+								</div>
+							</div>
+						</li>
+
+						<li class="order-info__content--item">
+							<div class="order-info__content--text left">
+								<h4 class="h4">Получение</h4>
+								<div class="text__item">Получаете посылку на отделении Новой Почты. Оплачиваете после осмотра!</div>
+							</div>
+
+							<div class="decoration">
+								<div class="line"></div>
+								<div class="circle-4 circle">
+									<div class="number">4</div>
+								</div>
+							</div>
+						</li>
+					</ul>
+
+					<div class="order-info__content--button">
+						<a class="button scrollto" href="#header__center--form">Заказать</a>
+					</div>
+				</div>
+
+			</div>
+		</section>
+
+	</main>
+
+
+
+	<!--___ footer ___-->
+	<footer class="footer">
+		<div class="container">
+
+			<!-- copyright -->
+			<div class="footer__copyright">
+				&copy;2020 - <span class="year"></span>,
+				<script>
+					document.querySelector('.year').innerText = new Date().getFullYear();
+				</script>
+				<a class="footer__copyright--link" href="index.html">
+					Fish-Landing
+				</a>
+			</div>
+
+			<!-- social -->
+			<div class="footer__social">
+				<a class="footer__social--link" target="_blank" rel="noopener" href="https://www.facebook.com/">
+					<i class="fa fa-facebook" aria-hidden="true"></i>
+				</a>
+
+				<a class="footer__social--link" target="_blank" rel="noopener" href="https://www.instagram.com">
+					<i class="fa fa-instagram" aria-hidden="true"></i>
+				</a>
+			</div>
+		</div>
+	</footer>
+
+
+	<!--* scripts *-->
+	<script src="js/scripts.min.js"></script>
+</body>
+</html>

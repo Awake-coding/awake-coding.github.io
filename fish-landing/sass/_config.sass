@@ -1,0 +1,233 @@
+//___ Imports Library ___
+// @import "../libs/animate/css/animate"
+// @import "../libs/font-awesome-4.7.0/css/font-awesome"
+
+
+//___ FONTS mixin ___
+@mixin font($font-family, $font-style, $font-weight, $file-path)
+	@font-face
+		font-family: $font-family
+		font-style: $font-style
+		font-weight: $font-weight
+		src: local($font-family), url("#{$file-path}.woff2") format("woff2"), url("#{$file-path}.woff") format("woff")
+		font-display: swap
+@include font("Raleway", normal, 400, "../fonts/Raleway-Regular")
+@include font("Raleway", normal, 600, "../fonts/Raleway-SemiBold")
+@include font("Raleway", normal, 700, "../fonts/Raleway-Bold")
+@include font("Cookie", normal, 400, "../fonts/Cookie-regular")
+
+
+//___ media mixin ___
+@mixin media($min-w: null, $max-w: null, $type: "screen")
+	// and min-width and max-width
+	@if ($min-w != null and $max-w != null)
+		@media #{$type} and (min-width: $min-w) and (max-width: $max-w)
+			@content
+	// Only min-width
+	@if ($min-w != null and $max-w == null)
+		@media #{$type} and (min-width: $min-w)
+			@content
+	// Only max-width
+	@if ($min-w == null and $max-w != null)
+		@media #{$type} and (max-width: $max-w)
+			@content
+	@if ($min-w == null and $max-w == null)
+		@error "👉 $min-w OR $max-w NOT null 👈"
+
+
+//___ VAR ___
+
+//** TEXT var **/
+$font-size: 16px
+$line-height: 1.65
+$font-default: "Raleway", sans-serif
+$font-system: -apple-system, BlinkMacSystemFont, Arial, sans-serif
+//👆 1. -apple-system - шрифт (San Francisco) для iOS Safari, MacOS Safari, MacOS Firefox */
+//👆 2. BlinkMacSystemFont - (San Francisco) для MacOS Chrome */
+//👆 3. Segoe UI - для Windows */
+
+//** Color var **/
+$accent-dark: #3d2617
+$accent-light: rgba(255, 255, 255, 0.86)
+$link: #e7e7e7
+$h-dark: #66412e
+$h-light: #ff5b00
+
+// $text: #8b8b8b
+// $light: #898888
+$dark: #000
+$white: #fff
+$transparent: rgba(255, 255, 255, 0)
+
+
+
+//___ default CSS SETTINGS ___
+*,
+*::before,
+*::after
+	margin: 0
+	padding: 0
+	box-sizing: border-box
+
+ul,
+li,
+ol
+	list-style: none
+
+a
+	text-decoration: none
+
+body
+	min-width: 320px
+	overflow-x: hidden
+	position: relative
+	background-color: $accent-dark
+	font-size: $font-size
+	line-height: $line-height
+	font-family: $font-default
+	scroll-behavior: smooth
+
+.container
+	width: 1085px
+	margin: 0 auto
+	padding: 0
+	position: relative
+	@include media($min-w: 0px, $max-w: 1100px)
+		width: 90%
+
+// .clearfix::before,
+// .clearfix::after,
+// .container:before,
+// .container:after
+// 	content: " "
+// 	display: table
+// .clearfix::after,
+// .container:after,
+// .container-fluid:after,
+// .row:after
+// 	clear: both
+// 	width: 100%
+
+header,
+section
+	position: relative
+	background-size: cover
+	background-position: 50% 50%
+
+// Form
+input,
+textarea
+	outline: none
+	border: none
+	border-bottom: 2px solid #c9c7c7
+	transition: all 0.2s ease-in-out
+	&:focus:required:invalid
+		border-color: #ff2828
+	&:required:valid
+		border-color: #5aff28
+
+// цвет placeholder="Подсказка в input"
+::placeholder
+	color: $accent-light
+	font-weight: 700
+
+// цвет выделения мышкой
+::selection       // цвет выделения мышкой
+	color: $white
+	background-color: lighten($h-light, 10%)
+
+
+b,
+strong
+	font-weight: 700
+
+address
+	font-style: normal
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5
+	line-height: 1
+
+.h1
+	color: $h_light
+	font-size: 40px
+	font-weight: 600
+	letter-spacing: 1px
+	text-transform: uppercase
+
+.h2
+	color: $h-dark
+	font-size: 38px
+	font-weight: 600
+	text-transform: uppercase
+
+.h3
+	color: $h-light
+	font-size: 30px
+	font-weight: 600
+	text-transform: uppercase
+
+
+
+/*______________ circle ______________*/
+.circle
+	width: 15px
+	height: 15px
+	margin-left: 6px
+	margin-right: 12px
+	box-shadow: 1px 2px 6px
+	background: $white
+	border-radius: 50px
+	&:last-child
+		margin-right: 0
+
+
+
+/*______________ button ______________*/
+.button
+	padding: 10px 25px
+	display: inline-block
+	position: relative
+	color: $accent-dark
+	background-color: $white
+	font-size: 30px
+	font-weight: 600
+	line-height: 1
+	letter-spacing: -1px // pастояния между букв
+	text-align: center
+	text-decoration: none
+	text-transform: uppercase
+	outline: none
+	border: none
+	border-radius: 2px
+	transition: all .2s ease
+	&::after
+		width: 100%
+		height: 4px
+		content: ""
+		position: absolute
+		left: 0
+		bottom: 0
+		opacity: .4
+		background-color: lighten($accent-dark, 20%)
+		border-bottom-left-radius: 2px
+		border-bottom-right-radius: 2px
+		transition: all .4s ease
+	&:focus,
+	&:hover
+		color: $accent-dark
+	&:hover
+		opacity: .8
+		background-color: lighten($white, 90%)
+		&::after
+			opacity: .9
+			background-color: lighten($accent-dark, 25%)
+	&:active
+		opacity: .7
+		background-color: darken($white, 5%)
+		&::after
+			opacity: .32
+/*______________// button ______________*/
