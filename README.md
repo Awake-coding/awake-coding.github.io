@@ -7,3 +7,6 @@
 
 [Black-white-landing - project site](https://awake-coding.github.io/black-white-landing/)
 <hr/>
+
+[Fish-landing - project site](https://awake-coding.github.io/fish-landing/)
+<hr/>
