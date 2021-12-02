@@ -557,22 +557,22 @@ address {
   content: "";
   border: 5px solid #dc5814;
 }
-.header .header__center--form .h3 {
+.header .header__center--form .h2 {
   color: #e7e7e7;
   font-size: 35px;
 }
 @media screen and (min-width: 800px) and (max-width: 1100px) {
-  .header .header__center--form .h3 {
+  .header .header__center--form .h2 {
     font-size: 36px;
   }
 }
 @media screen and (min-width: 0px) and (max-width: 800px) {
-  .header .header__center--form .h3 {
+  .header .header__center--form .h2 {
     font-size: 30px;
   }
 }
 @media screen and (min-width: 0px) and (max-width: 555px) {
-  .header .header__center--form .h3 {
+  .header .header__center--form .h2 {
     font-size: 27px;
   }
 }
@@ -633,23 +633,23 @@ address {
   font-size: 18px;
   line-height: 1;
 }
-.header .header__center--form .form__order .form__order--submit__massage .form__order--submit.button {
-  margin-top: 20%;
+.header .header__center--form .form__order .form__order--submit__massage .button {
+  margin-top: 15%;
   color: #fff;
   font-size: 44px;
   background-color: #F75D2B;
 }
-.header .header__center--form .form__order .form__order--submit__massage .form__order--submit.button::after {
+.header .header__center--form .form__order .form__order--submit__massage .button::after {
   background-color: white;
 }
-.header .header__center--form .form__order .form__order--submit__massage .form__order--submit.button:hover {
+.header .header__center--form .form__order .form__order--submit__massage .button:hover {
   background-color: #f76535;
 }
-.header .header__center--form .form__order .form__order--submit__massage .form__order--submit.button:active {
+.header .header__center--form .form__order .form__order--submit__massage .button:active {
   background-color: #fba88d;
 }
 @media screen and (min-width: 0px) and (max-width: 555px) {
-  .header .header__center--form .form__order .form__order--submit__massage .form__order--submit.button {
+  .header .header__center--form .form__order .form__order--submit__massage .button {
     font-size: 38px;
   }
 }
@@ -751,13 +751,19 @@ address {
           justify-content: space-around;
   border: 2px solid #dbdbdb;
 }
-.info .info__content .h3 {
+.info .info__content .h2 {
   margin-bottom: 49px;
   display: block;
   color: rgba(255, 255, 255, 0.86);
+  font-size: 30px;
   font-weight: 700;
   line-height: 1.3;
   text-align: center;
+}
+@media screen and (min-width: 0px) and (max-width: 555px) {
+  .info .info__content .h2 {
+    font-size: 20px;
+  }
 }
 .info .info__content--list {
   width: 541px;
@@ -842,8 +848,10 @@ address {
     margin-left: 20px;
   }
 }
-.info .info__content--gif img {
+.info .info__content--gif img,
+.info .info__content--gif video {
   width: 100%;
+  height: 100%;
   overflow: hidden;
 }
 
@@ -1087,6 +1095,10 @@ address {
 .facts .facts__content--cell .facts__content--img img[src="img/dist/Fish_info2.gif"] {
   height: 110%;
 }
+.facts .facts__content--cell .facts__content--img video {
+  min-width: 110%;
+  height: 110%;
+}
 
 .products {
   padding-top: 49px;
@@ -1239,7 +1251,7 @@ address {
   position: relative;
   font-weight: 600;
 }
-.order-info .order-info__content--item .order-info__content--text .h4 {
+.order-info .order-info__content--item .order-info__content--text .h3 {
   padding-top: 10px;
   color: #ff9257;
   font-size: 20px;
