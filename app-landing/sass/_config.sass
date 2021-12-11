@@ -1,0 +1,213 @@
+//___ Imports Library ___
+// @import "../libs/animate/css/animate"
+// @import "../libs/font-awesome-4.7.0/css/font-awesome"
+
+
+//___ FONTS mixin ___
+@mixin font($font-family, $font-style, $font-weight, $file-path)
+	@font-face
+		font-family: $font-family
+		font-style: $font-style
+		font-weight: $font-weight
+		src: local($font-family), url("#{$file-path}.woff2") format("woff2"), url("#{$file-path}.woff") format("woff")
+		font-display: swap
+/* 100(Thin),   200(Extra Light), 300(Light), 400(Regular),
+	500(Medium), 600(Semi Bold),   700(Bold),  800(Extra Bold),
+	900(Black),  950(Extra Black) */
+@include font("Poppins", normal, 400, "../fonts/Poppins-Regular")
+@include font("Poppins", normal, 500, "../fonts/Poppins-Medium")
+@include font("Poppins", normal, 600, "../fonts/Poppins-SemiBold")
+@include font("Poppins", normal, 700, "../fonts/Poppins-Bold")
+
+
+
+//___ media mixin ___
+// In project:
+// @include media($min-w: 901px, $max-w: 1170px)
+// @include media($min-w: 0px, $max-w: 1170px)
+// @include media($min-w: 0px, $max-w: 900px)
+// @include media($min-w: 0px, $max-w: 600px)
+// @include media($min-w: 0px, $max-w: 420px)
+@mixin media($min-w: null, $max-w: null, $type: "screen")
+	// and min-width and max-width
+	@if ($min-w != null and $max-w != null)
+		@media #{$type} and (min-width: $min-w) and (max-width: $max-w)
+			@content
+	// Only min-width
+	@if ($min-w != null and $max-w == null)
+		@media #{$type} and (min-width: $min-w)
+			@content
+	// Only max-width
+	@if ($min-w == null and $max-w != null)
+		@media #{$type} and (max-width: $max-w)
+			@content
+	@if ($min-w == null and $max-w == null)
+		@error "👉 $min-w OR $max-w NOT null 👈"
+
+
+
+//___ VARs ___
+
+//** TEXT var **/
+$font-size-default: 16px
+$line-height: 1.65
+$font-default: "Poppins", sans-serif
+$font-system: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif
+//👆 1. -apple-system - шрифт (San Francisco) для iOS Safari, MacOS Safari, MacOS Firefox */
+//👆 2. BlinkMacSystemFont - (San Francisco) для MacOS Chrome */
+//👆 3. Segoe UI - для Windows */
+
+//** Color var **/
+$accent-light: #fff
+$accent-dark: #1d1d1d
+$dark: #242f51
+$light: #b8b8b8
+$text: #616368
+$button: #2500f9
+
+$white: #fff
+$transparent: rgba(255, 255, 255, 0)
+
+
+
+//___ default CSS SETTINGS ___
+*,
+*::before,
+*::after
+	margin: 0
+	padding: 0
+	box-sizing: border-box
+
+ul,
+li,
+ol
+	list-style: none
+
+a
+	text-decoration: none
+
+html,
+body
+	min-width: 320px
+	overflow-x: hidden
+	position: relative
+	color: $text
+	font-size: $font-size-default
+	line-height: $line-height
+	font-family: $font-default
+	background-color: $accent-light
+
+body
+	scroll-behavior: smooth
+
+.container
+	width: 1170px
+	margin: 0 auto
+	padding: 0
+	position: relative
+	@include media($min-w: 0px, $max-w: 1210px)
+		width: 90%
+
+header,
+section,
+footer
+	// overflow-x: hidden
+	position: relative
+	background-size: cover
+	background-position: 50% 50%
+
+input,
+textarea   // Form
+	outline: none
+	&:focus:required:invalid
+		border-color: #ff2828
+	&:required:valid
+		border-color: #5aff28
+
+::placeholder     // цвет placeholder="Подсказка в input"
+	color: $light
+
+::selection       // цвет выделения мышкой
+	color: $white
+	background-color: lighten($accent-dark, 10%)
+
+
+b,
+strong
+	font-weight: 700
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5
+	font-weight: 600
+	line-height: 1.2
+
+.h1
+	margin-top: 15px
+	margin-bottom: 15px
+	color: $dark
+	font-size: 60px
+	@include media($min-w: 0px, $max-w: 1170px)
+		font-size: 32px
+	@include media($min-w: 0px, $max-w: 420px)
+		font-size: 25px
+
+.h2
+	color: $dark
+	font-size: 36px
+	@include media($min-w: 0px, $max-w: 420px)
+		font-size: 26px
+
+.h3
+	color: $dark
+	font-size: 36px
+	font-weight: normal
+
+
+
+
+
+/*____ button ____*/
+.button
+	padding: 20px 40px
+	display: inline-block
+	position: relative
+	color: $accent-light
+	background-color: $button
+	font-size: 16px
+	font-weight: 600
+	font-family: sans-serif
+	letter-spacing: 1px // pастояния между букв
+	line-height: 1.2
+	text-align: center
+	text-decoration: none
+	// text-transform: uppercase
+	outline: none
+	border: 2px solid $transparent
+	border-radius: 40px
+	transition: all .2s ease
+	&::after
+		width: 0%
+		height: 4px
+		content: ""
+		position: absolute
+		left: 0
+		bottom: 0
+		opacity: .4
+		background-color: darken(#030303, 1%)
+		border-bottom-left-radius: 2px
+		border-bottom-right-radius: 2px
+		transition: all .4s ease
+	&:hover
+		opacity: .9
+		background-color: lighten($button, 8%)
+		&::after
+			opacity: .8
+			background-color: lighten(#000, 20%)
+	&:active
+		background-color: lighten($button, 25%)
+		&::after
+			opacity: .32
+/*____// button _____*/
