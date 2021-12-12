@@ -1,27 +1,141 @@
-# awake-coding.github.io
-[Brunch - project site](https://awake-coding.github.io/brunch/)
-<hr/>
+# Projects sites
 
-[Alphabet - project site](https://awake-coding.github.io/alphabet/)
-<hr/>
+<table align="center">
+  <tbody>
+    <!-- site 👇 -->
+    <tr>
+      <!-- td 🔳 -->
+      <td align="center" colspan="1" rowspan="2">
+        <a href="https://awake-coding.github.io/brunch/" rel="nofollow">
+          <img src="image/brunch-preview.jpg" title="Go to the site" alt="brunch-preview" style="width: 50px;">
+        </a>
+      </td>
+      <!-- td 🔳 -->
+      <td rowspan="2">
+        <a href="https://awake-coding.github.io/brunch/" rel="nofollow">
+          Brunch
+        </a>
+      </td>
+      <!-- td 🔳 -->
+      <td align="center">Landing</td>
+    </tr>
+    <!-- row -->
+    <tr>
+      <!-- td 🔳 -->
+      <td align="center">
+        12 sections
+      </td>
+    </tr>
+    <!-- site 👇 -->
+    <tr>
+      <!-- td 🔳 -->
+      <td align="center" colspan="1" rowspan="2">
+        <a href="https://awake-coding.github.io/alphabet/" rel="nofollow">
+          <img src="image/alphabet-preview.jpg" title="Go to the site" alt="alphabet-preview" style="width: 50px;">
+        </a>
+      </td>
+      <!-- td 🔳 -->
+      <td rowspan="2">
+        <a href="https://awake-coding.github.io/alphabet/" rel="nofollow">
+          Alphabet
+        </a>
+      </td>
+      <!-- td 🔳 -->
+      <td align="center">JS</td>
+    </tr>
+    <!-- row -->
+    <tr>
+      <!-- td 🔳 -->
+      <td align="center">
+        2 sections
+      </td>
+    </tr>
+    <!-- site 👇 -->
+    <tr>
+      <!-- td 🔳 -->
+      <td align="center" colspan="1" rowspan="2">
+        <a href="https://awake-coding.github.io/black-white-landing/" rel="nofollow">
+          <img src="image/black-white-landing-preview.jpg" title="Go to the site" alt="black-white-landing" style="width: 50px;">
+        </a>
+      </td>
+      <!-- td 🔳 -->
+      <td rowspan="2">
+        <a href="https://awake-coding.github.io/black-white-landing/" rel="nofollow">
+          Black-white-landing
+        </a>
+      </td>
+      <!-- td 🔳 -->
+      <td align="center">Landing</td>
+    </tr>
+    <!-- row -->
+    <tr>
+      <!-- td 🔳 -->
+      <td align="center">
+        5 sections
+      </td>
+    </tr>
+    <!-- site 👇 -->
+    <tr>
+      <!-- td 🔳 -->
+      <td align="center" colspan="1" rowspan="2">
+        <a href="https://awake-coding.github.io/fish-landing/" rel="nofollow">
+          <img src="image/fish-landing-preview.jpg" title="Go to the site" alt="fish-landing-preview" style="width: 50px;">
+        </a>
+      </td>
+      <!-- td 🔳 -->
+      <td rowspan="2">
+        <a href="https://awake-coding.github.io/fish-landing/" rel="nofollow">
+          Fish-landing
+        </a>
+      </td>
+      <!-- td 🔳 -->
+      <td align="center">Landing</td>
+    </tr>
+    <!-- row -->
+    <tr>
+      <!-- td 🔳 -->
+      <td align="center">
+        7 sections
+      </td>
+    </tr>
+    <!-- site 👇 -->
+    <tr>
+      <!-- td 🔳 -->
+      <td align="center" colspan="1" rowspan="2">
+        <a href="https://awake-coding.github.io/app-landing/" rel="nofollow">
+          <img src="image/app-landing-preview.jpg" title="Go to the site" alt="app-landing-preview" style="width: 50px;">
+        </a>
+      </td>
+      <!-- td 🔳 -->
+      <td rowspan="2">
+        <a href="https://awake-coding.github.io/app-landing/" rel="nofollow">
+          App-landing
+        </a>
+      </td>
+      <!-- td 🔳 -->
+      <td align="center">Landing</td>
+    </tr>
+    <!-- row -->
+    <tr>
+      <!-- td 🔳 -->
+      <td align="center">
+        12 sections
+      </td>
+    </tr>
+    <!-- site 👇 -->
+  </tbody>
+</table>
 
-[Black-white-landing - project site](https://awake-coding.github.io/black-white-landing/)
-<hr/>
-
-[Fish-landing - project site](https://awake-coding.github.io/fish-landing/)
-<hr/>
-
-[App-landing - project site](https://awake-coding.github.io/app-landing/)
-<hr/>
 
 
-<br><br><br>
+
+<br>
 
 
 ## Browsers support
 ##### (except "Alphabet" - project)
 
-<table>
+<table align="center">
   <thead>
     <tr>
       <th>
