@@ -56,7 +56,7 @@ I used and made:
   - ### HTML
       - Errors output between: ```<div id="table__error--wrap"></div>``` function ```errorMessageOutput()```
       - The table is built between: ```<div id="table__wrap"></div>```
-      - The table is built with tags: ```<table>, <div>, <tr>, <th>, <td>``` (it is better not to build tables through div, as this will cause a number of difficulties and requires CSS crutches , verified)
+      - The table is built with tags: ```<table>, <div>, <tr>, <th>, <td>```
   - ### JS
       - Execution starts after the HTML is fully loaded (when the DOM tree is built), all code is in ```document.addEventListener('DOMContentLoaded'...){}```
       - The object ```ObjectAlphabet``` with arrays that contain alphabets is at the beginning file
@@ -68,14 +68,14 @@ I used and made:
       - ```createCol(idCol, nameCol__th, arrayLetters)``` - A function to create a column for the alphabet, to which you need to pass 3 parameters:
           - ```idCol``` (unique id - for new alphabet column);
           - ```nameCol__th``` (text - for Alphabet column name)
-          - ```ObjectAlphabet.<NameArray>``` OR ```null``` (Array of letters or null, if instead of an array set to null, a line number column will be created using the variable ```maxLength__Array```)
-      - Created ```if else``` checks, with error output
+          - ```ObjectAlphabet.<NameArray>``` OR ```null``` (When ```null``` is specified instead of an array, a letter numbering column will be created using the variable ```maxLength__Array ``` )
+      - Created checks ```if else``` , with error output
       - ```errorMessageOutput()``` - Error output function to which we can pass error text, depending on the check
       - Errors were found for ```IE11``` as the browser does not have support for:
           - ``
-          - ```append()``` method (fixed a bug by replacing it with an older ```appendChild()``` method)
+          - Method ```append()``` (You can fix the error by using the old ```appendChild()``` method)
           - Default parameters for functions ```(idCol='', nameCol__th='', arrayLetters=[])```
-  - ### CSS
+  - ### SASS (CSS)
       - First letter always capitalized - for class ```.big``` with: ```text-transform: capitalize```
       - Letters are always lowercase - for class ```.small``` with: ```text-transform: lowercase```
-      - Errors are styled according to the ```.error-alert``` class, a block with this class is created by the ```errorMessageOutput(textError)``` function
+      - Errors are CSS styled with class ```.error-alert```, block with this class is created by function ```errorMessageOutput(textError)```
