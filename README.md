@@ -2,18 +2,7 @@
 
 <table align="center">
   <thead>
-    <tr>
-      <th align="center">
-        Preview
-      </th>
-      <th align="center">
-        Link to result
-      </th>
-      <th align="center">
-        <!-- _______·Type·_______ -->
-        Type
-      </th>
-    </tr>
+    <tr><th>Preview</th><th>Link to result</th><th>Type</th></tr>
   </thead>
   <tbody>
     <!-- site 👇 -->
