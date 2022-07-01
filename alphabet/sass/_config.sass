@@ -1,0 +1,212 @@
+//___ FONTS mixin ___
+@mixin font($font-family, $font-style, $font-weight, $file-path)
+	@font-face
+		font-family: $font-family
+		font-style: $font-style
+		font-weight: $font-weight
+		src: local($font-family), url("#{$file-path}.woff2") format("woff2"), url("#{$file-path}.woff") format("woff")
+		font-display: swap
+/* 100(Thin),   200(Extra Light), 300(Light), 400(Regular),
+	500(Medium), 600(Semi Bold),   700(Bold),  800(Extra Bold),
+	900(Black),  950(Extra Black) */
+// @include font("", normal, 400, "../fonts/")
+
+
+
+//___ media mixin ___
+// In project:
+// @include media($min-w: px, $max-w: px)
+// @include media($min-w: px, $max-w: px)
+// @include media($min-w: px, $max-w: px)
+// @include media($min-w: px, $max-w: px)
+// @include media($min-w: px, $max-w: px)
+@mixin media($min-w: null, $max-w: null, $type: "screen")
+	// and min-width and max-width
+	@if ($min-w != null and $max-w != null)
+		@media #{$type} and (min-width: $min-w) and (max-width: $max-w)
+			@content
+	// Only min-width
+	@if ($min-w != null and $max-w == null)
+		@media #{$type} and (min-width: $min-w)
+			@content
+	// Only max-width
+	@if ($min-w == null and $max-w != null)
+		@media #{$type} and (max-width: $max-w)
+			@content
+	@if ($min-w == null and $max-w == null)
+		@error "👉 $min-w OR $max-w NOT null 👈"
+
+
+
+//___ VARs ___
+
+//** TEXT var **/
+$font-size-default: 16px
+$line-height: 1.2
+$font-default: Verdana, Geneva, Tahoma, sans-serif
+$font-system: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif
+/* 👆 1. -apple-system - шрифт (San Francisco) для iOS Safari, MacOS Safari, MacOS Firefox
+		👆 2. BlinkMacSystemFont - (San Francisco) для MacOS Chrome
+			👆 3. Segoe UI - для Windows */
+
+//** Color var **/
+$accent-light: linear-gradient(217deg, rgba(255, 177, 0, 0.8), rgba(255, 0, 0, 0) 70.71%), linear-gradient(127deg, rgba(255, 71, 0, 0.631), rgba(0, 255, 0, 0) 70.71%), linear-gradient(336deg, rgba(255, 141, 0, 0.541), rgba(0, 0, 255, 0) 70.71%)
+$accent-dark: rgba(79, 78, 78, 0.322)
+$border-table: #9a8974
+$th: #efba42
+$tr1: #fdd79a
+$tr2: #efc37b
+$dark: #000000
+$light: #7d7c7c
+$link: #4f4e4e
+$link-hover: #ffffff
+
+$text: #000000
+$button: #2500f9
+$white: #fff
+$transparent: rgba(255, 255, 255, 0)
+
+
+
+//___ default CSS SETTINGS ___
+*,
+*::before,
+*::after
+	margin: 0
+	padding: 0
+	box-sizing: border-box
+
+ul,
+li,
+ol
+	list-style: none
+
+a
+	text-decoration: none
+
+html,
+body
+	min-width: 320px
+	overflow-x: hidden
+	position: relative
+	color: $text
+	font-size: $font-size-default
+	line-height: $line-height
+	font-family: $font-default
+
+body
+	min-height: 100vh
+	background: $accent-light
+	scroll-behavior: smooth
+
+.container
+	width: 1170px
+	margin: 0 auto
+	padding: 0
+	position: relative
+	@include media($min-w: 0px, $max-w: 1210px)
+		width: 90%
+
+header,
+section,
+footer
+	// overflow-x: hidden
+	position: relative
+	background-size: cover
+	background-position: 50% 50%
+
+input,
+textarea   // Form
+	outline: none
+	&:focus:required:invalid
+		border-color: #ff2828
+	&:required:valid
+		border-color: #5aff28
+
+::placeholder     // цвет placeholder="Подсказка в input"
+	color: $light
+
+::selection       // цвет выделения мышкой
+	color: $white
+	background: darken($accent-dark, 5%)
+
+
+b,
+strong
+	font-weight: 700
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5
+	font-weight: 600
+	line-height: 1.2
+
+.h1
+	margin-top: 15px
+	margin-bottom: 15px
+	color: $dark
+	font-size: 40px
+	@include media($min-w: 420px, $max-w: 1170px)
+		font-size: 32px
+	@include media($min-w: 0px, $max-w: 420px)
+		font-size: 25px
+
+.h2
+	color: $dark
+	font-size: 36px
+	@include media($min-w: 0px, $max-w: 420px)
+		font-size: 26px
+
+.h3
+	color: $dark
+	font-size: 36px
+	font-weight: normal
+
+
+
+
+
+/*____ button ____*/
+.button
+	padding: 20px 40px
+	display: inline-block
+	position: relative
+	color: $accent-light
+	background: $button
+	font-size: 16px
+	font-weight: 600
+	font-family: sans-serif
+	letter-spacing: 1px // расстояния между букв
+	line-height: 1.2
+	text-align: center
+	text-decoration: none
+	// text-transform: uppercase
+	outline: none
+	border: 2px solid $transparent
+	border-radius: 40px
+	transition: all .2s ease
+	&::after
+		width: 0%
+		height: 4px
+		content: ""
+		position: absolute
+		left: 0
+		bottom: 0
+		opacity: .4
+		background: darken(#030303, 1%)
+		border-bottom-left-radius: 2px
+		border-bottom-right-radius: 2px
+		transition: all .4s ease
+	&:hover
+		opacity: .9
+		background: lighten($button, 8%)
+		&::after
+			opacity: .8
+			background: lighten(#000, 20%)
+	&:active
+		background: lighten($button, 25%)
+		&::after
+			opacity: .32
+/*____// button _____*/

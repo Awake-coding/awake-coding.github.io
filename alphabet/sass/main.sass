@@ -1,124 +1,122 @@
+//___ config ___
+//* Vars, Fonts, mixin @media, default 1 CSS */
+@import "_config"
 
-//___Variables___
-$bg-fon: rgba(255, 212, 0, 0.659)
-$bg-page: linear-gradient(217deg, rgba(255, 177, 0, 0.8), rgba(255, 0, 0, 0) 70.71%), linear-gradient(127deg, rgba(255, 71, 0, 0.631), rgba(0, 255, 0, 0) 70.71%), linear-gradient(336deg, rgba(255, 141, 0, 0.541), rgba(0, 0, 255, 0) 70.71%)
 
-$color_h1: #000000
-$color_textTable: #000000
-$color_table: #7d7c7c
-$color_nameCol: rgba(150, 135, 5, 0.234)
-$color_row1: rgba(255, 255, 255, 0.379)
-$color_row2: rgba(195, 195, 195, 0.221)
-$color_links: #4f4e4e
-$color_linksHover: #ffffff
-//* _____________________________
 
-*
-	margin: 0
-	padding: 0
-	box-sizing: border-box
-
-body
-	font-size: 16px
-	font-family: sans-serif
-	min-width: 320px
-	min-height: 100vh
-	line-height: 1.2
-	opacity: 1
-	scroll-behavior: smooth
-	background: $bg-page
-	background-size: cover
-
-//* Alert ERROR
-.alert
+//___ Alert ERROR ___
+.error-alert
 	padding: 25px
 	margin: 20px 25px
-	border: 4px solid #ff0000
-	border-radius: 5px
-	color: #ff0000
+	color: #fc4141
 	font-size: 22px
-	background-color: #000000
+	border: 4px solid #fc4141
+	border-radius: 15px
+	background-color: #0f0f0f
+	ul
+		padding-left: 1em
+		li
+			padding-left: 0.2em
 
-.header
+
+
+//___ header ___
+// .header
+
+
+
+//___ table-section ___
+//* Alphabet Table with ObjectAlphabet
+.table-section							// <section>
 	.h1
 		padding-top: 30px
 		text-align: center
-		color: $color_h1
-
-
-
-
-//* Alphabet Table with ObjectAlphabet
-.section__table						// <section>
-	.table								// <table>
+		color: $dark
+	#table								// <table>
 		margin-top: 30px
 		margin-bottom: 30px
 		display: flex
 		justify-content: center
-		font-size: 19px
+		color: $dark
+		font-size: 18px
 		line-height: 1.1
-		color: $color_textTable
 		border-collapse: collapse
 		.col								// <div> Столбец
-			th								// <th> Имя столбца
-				text-align: center
-			td								// <td> Ячейки с буквами
-				padding-left: 10px
-				padding-right: 10px
 			th, td
-				border: 2px solid $color_table
+				border: 2px solid $border-table
 				border-left: none
-			&:first-child				// <div> Первый столбец
+			&:first-child				// Первый из столбцов с классом .col
 				th, td
-					border-left: 2px solid $color_table
+					border-left: 2px solid $border-table
 				td
 					text-align: right
-			&:last-child				// <div> Последний столбец
-				th, td
-					border-left: none
-			.letters, .number			// <tr>
-				&:nth-child(2n)
-					background: $color_row1
-				&:nth-child(2n+1)
-					background: $color_row2
-			.big, .small				// <div>
-				display: inline-block
-			.nameCol						// <tr>
-				background: $color_nameCol
-			.big							// <div>
-				font-weight: bold
-				padding-left: 16px
-			.small						// <div>
-				font-size: 16px
-				padding-left: 2px
+			tr
+				min-width: 1px
+				&:first-child			// 1
+					background: $th
+				&:nth-child(2n+2)		// 2, 4, 6...
+					background: $tr1
+				&:nth-child(2n+3)		// 3, 5, 7...
+					background: $tr2
+			th
+				text-align: center
+			td
+				min-width: 100%
+				padding-left: 10px
 				padding-right: 10px
+				// display: flex
+				.big						// <div>
+					width: 50%
+					padding-left: 16px
+					display: inline-block
+					text-transform: capitalize
+					font-weight: bold
+				.small					// <div>
+					width: 50%
+					padding-left: 10px
+					padding-right: 10px
+					display: inline-block
+					font-size: 16px
+					text-transform: lowercase
 
 
 
-
+//___ other-sites ___
 //* Ссылки на сайты
-.section__other-sites
+.other-sites
+	.h2
+		font-size: 20px
+		text-align: center
 	.links
 		display: flex
 		flex-wrap: wrap
 		flex-direction: column
-		align-content: center
 		align-items: center
-		.col
+		.links__item
 			margin-top: 20px
 			padding: 5px 0px
-			// width: 100%
-			// width: auto
-			// display: inline-block
 			&:last-child
-				margin-bottom: 40px
-		&__link //a
+				margin-bottom: 60px
+		&__link
 			padding: 5px 20px
-			text-decoration: none
+			color: $link
 			font-size: 18px
-			border: 2px solid $color_links
-			color: $color_links
+			border: 2px solid $link
 			transition: all 0.2s ease
 			&:hover
-				color: $color_linksHover
-				border-color: $color_linksHover
+				color: $link-hover
+				border-color: $link-hover
+
+
+
+.footer
+	padding-top: 35px
+	padding-bottom: 30px
+	background: $accent-dark
+	.footer__copyright
+		color: $dark
+		font-size: 18px
+		font-weight: 700
+		text-align: center
+		&--company
+			font-size: 18px
