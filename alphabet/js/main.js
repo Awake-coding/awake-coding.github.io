@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function Main() {
   //: Object with arrays Alphabets :
   const ObjectAlphabet = {
     enArr: [ 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' ],
+    uaArr: [ 'А', 'Б', 'В', 'Г', 'Д', 'Е', 'Є', 'Ж', 'З', 'И', 'І', 'Ї', 'Й', 'К', 'Л', 'М', 'Н', 'О', 'П', 'Р', 'С', 'Т', 'У', 'Ф', 'Х', 'Ц', 'Ч', 'Ш', 'Щ', 'Ь', 'Ю', 'Я' ],
     ruArr: [ 'А', 'Б', 'В', 'Г', 'Д', 'Е', 'Ё', 'Ж', 'З', 'И', 'Й', 'К', 'Л', 'М', 'Н', 'О', 'П', 'Р', 'С', 'Т', 'У', 'Ф', 'Х', 'Ц', 'Ч', 'Ш', 'Щ', 'Ъ', 'Ы', 'Ь', 'Э', 'Ю', 'Я' ],
     ruToEnArr: [ 'A', 'B', 'V', 'G', 'D', 'E', 'Yo/E', 'Zh', 'Z', 'I', 'Y/I', 'K', 'L', 'M', 'N', 'O', 'P', 'R', 'S', 'T', 'U', 'F', 'Kh', 'Ts', 'Ch', 'Sh', 'Shch', '\'\'', 'Y', '\'', 'E', 'Yu/Iu', 'Ya/Ia' ]
   };
@@ -44,8 +45,10 @@ document.addEventListener('DOMContentLoaded', function Main() {
 
   //*___ main actions ___*/
   /* creating columns with the given parameters */
+  /*         Class        Name        Alphabet  */
   createCol('colNumber',  '№',        null);
   createCol('colEn',      'En',       ObjectAlphabet.enArr);
+  createCol('colUa',      'Ua',       ObjectAlphabet.uaArr);
   createCol('colRu',      'Ru',       ObjectAlphabet.ruArr);
   createCol('colRuToEn',  'Ru > En',  ObjectAlphabet.ruToEnArr);
 
