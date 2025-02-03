@@ -43,7 +43,7 @@
     <tr>
       <td align="center">
         <!-- 5 sections -->
-        —:point_up_2:—
+        — :point_up_2: —
       </td>
     </tr>
     <!-- site 👇 -->

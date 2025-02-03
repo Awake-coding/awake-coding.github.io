@@ -26,7 +26,7 @@
     <tr>
       <td align="center">
         <!-- 12 sections -->
-        <!-- —:point_up_2:— -->
+        <!-- — :point_up_2: — -->
         ← <a href="brunch/#brunch-project-open_file_folder" rel="nofollow">
           Readme :high_brightness:
         </a>
@@ -53,7 +53,7 @@
     <tr>
       <td align="center">
         <!-- 2 sections -->
-        <!-- —:point_up_2:— -->
+        <!-- — :point_up_2: — -->
         ← <a href="alphabet/#alphabet-project-open_file_folder" rel="nofollow">
           Readme :high_brightness:
         </a>
@@ -80,7 +80,7 @@
     <tr>
       <td align="center">
         <!-- 5 sections -->
-        <!-- —:point_up_2:— -->
+        <!-- — :point_up_2: — -->
         ← <a href="black-white-landing/#black-white-landing-project-open_file_folder" rel="nofollow">
           Readme :high_brightness:
         </a>
@@ -107,7 +107,7 @@
     <tr>
       <td align="center">
         <!-- 7 sections -->
-        <!-- —:point_up_2:— -->
+        <!-- — :point_up_2: — -->
         ← <a href="fish-landing/#fish-landing-project-open_file_folder" rel="nofollow">
           Readme :high_brightness:
         </a>
@@ -133,7 +133,7 @@
       <tr>
         <td align="center">
           <!-- 12 sections -->
-          <!-- —:point_up_2:— -->
+          <!-- — :point_up_2: — -->
           ← <a href="app-landing/#app-landing-project-open_file_folder" rel="nofollow">
             Readme :high_brightness:
           </a>

@@ -42,7 +42,7 @@
       <tr>
         <td align="center">
           <!-- 12 sections -->
-          —:point_up_2:—
+          — :point_up_2: —
         </td>
       </tr>
     </tr>
